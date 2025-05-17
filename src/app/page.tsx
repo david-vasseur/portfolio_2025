@@ -1,11 +1,33 @@
+"use client";
+
 import Wrapper from "./__components/features/Wrapper";
 import SectionHome from "./__components/layout/SectionHome";
 import SectionWork from "./__components/layout/SectionWork";
 import SectionContact from "./__components/layout/SectionContact";
+import Transitions from "./__components/features/Transitions";
+import { useEffect, useState } from "react";
+import { usePage } from "@/hooks/pageContext";
 
 export default function Home() {
+
+	const [isOpen, setIsOpen] = useState(false);
+	const { currentIndex } = usePage();
+
+	useEffect(() => {
+		const goTransition = () => {
+			setIsOpen((prev) => !prev);
+        	setTimeout(() => {setIsOpen((prev) => !prev)}, 1000);
+		};
+
+		if (currentIndex !== null) {
+			goTransition();
+		}
+	}, [currentIndex]);
+
+
 	return (		
 		<main className="w-full">
+			<Transitions isOpen={isOpen} onClose={() => setIsOpen(false)} />
 			<Wrapper>
 				<section id="section-1" className="h-[100vh] w-full flex justify-center items-center">
 					<SectionHome />

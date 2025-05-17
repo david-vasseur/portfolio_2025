@@ -64,6 +64,92 @@ body::-webkit-scrollbar {
 	filter: drop-shadow(0 0 1.25px #5F606A); 
 }
 
-/*--------------------------------------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------------------------- Transition ------*/
 
+.portal-animated {
+	backdrop-filter: blur(0px);
+	background-color: rgba(20,18,31,0);
+	transition: backdrop-filter 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.portal-animated.active {
+  	animation: pageBlur 1s ease-in-out;
+}
+
+.portal-transition {
+	width: 100vw; 
+	height: 100vh;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 3;
+}
+
+.portal-transition::before {
+	content: "";
+	position: absolute;
+	width: 100vw; 
+	height: 100vh; 
+	background-image: linear-gradient(to top left, transparent 50%, #14121F 50%);
+	z-index: 3;
+	transform: translateX(-100vw);
+	top: 0;
+	left: 0;
+	animation: pageTransitionLeft 1s ease-in-out;
+}
+
+.portal-transition::after {
+	content: "";
+	position: absolute;
+	width: 100vw; 
+	height: 100vh; 
+	background-image: linear-gradient(to top left, #14121F 50%, transparent 50%);
+	z-index: 3;
+	transform: translateX(100vw);
+	top: 0;
+	left: 0;
+	animation: pageTransitionRight 1s ease-in-out;
+}
+
+@keyframes pageTransitionLeft {
+	from {
+		transform: translateX(-100vw);
+	}
+	45% {
+		transform: translateX(0);
+	}
+	55% {
+		transform: translateX(0);
+	}
+	100%
+	{
+		transform: translateX(-100vw);
+	}
+}
+
+@keyframes pageTransitionRight {
+	from {
+		transform: translateX(100vw);
+	}
+	50% {
+		transform: translateX(0);
+	}
+	100%
+	{
+		transform: translateX(100vw);
+	}
+}
+
+@keyframes pageBlur{
+	from {
+		backdrop-filter: blur(0);
+	}
+	50% {
+		backdrop-filter: blur(1px);
+	}
+	100%
+	{
+		backdrop-filter: blur(0);
+	}
+}
 

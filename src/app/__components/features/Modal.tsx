@@ -1,15 +1,29 @@
-import React from 'react'
+"use client";
 
-function Modal({ title, message, onClose } :{ title: string, message: string, onClose: () => void }) {
-  return (
-    <div className='pop-container'>
-        <div className='pop-card'>
-            <h2 className='pop-title text-[var(--text2)] text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold mt-10'>{title}</h2>
-            <p className='pop-message'>{message}</p>
-            <button className='w-[15%] h-[12%] bg-[var(--accent1)] -z-1 rounded-2xl neon-icons font-bold text-xl text-[var(--text1)] mb-10' onClick={() => onClose()}>Close</button>
-        </div>
-    </div>
-  )
+import ModalPortal from "./ModalPortal";
+
+interface ModalProps {
+	isOpen: boolean;
+	onClose: () => void;
+	children: React.ReactNode;
 }
 
-export default Modal;
+export default function Modal({ isOpen, onClose, children }: ModalProps) {
+  	if (!isOpen) return null;
+
+	return (
+		<ModalPortal>
+		<div
+			className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-2"
+			onClick={onClose}
+		>
+			<div
+				className="bg-[#820085] rounded-xl p-6 max-w-lg w-full"
+				onClick={(e) => e.stopPropagation()}
+			>
+			{children}
+			</div>
+		</div>
+		</ModalPortal>
+	);
+}
