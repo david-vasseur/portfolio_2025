@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
-import Logo from "./__components/Logo";
-import NavBar from "./__components/NavBar";
+import Logo from "./__components/ux/Logo";
+import NavBar from "./__components/layout/NavBar";
 import { PageProvider } from "@/hooks/pageContext";
 
 const notoSans = localFont({

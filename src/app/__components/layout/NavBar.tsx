@@ -37,10 +37,10 @@ function NavBar({ className }: { className: string }) {
 
 	return (
         <div className={className}>        
-            <div className={`relative h-[50px] px-[2rem] py-[1.5rem] rounded-4xl flex justify-around items-center gap-6 bg-gray-800 shadow-2xl border-2 border-[#5F606A] -translate-x-[50%]`} ref={divRef}>
+            <div className={`relative h-[50px] px-[1.3rem] py-[1rem] rounded-4xl flex justify-around items-center gap-6 bg-gray-800 shadow-2xl border-2 border-[#5F606A] -translate-x-[50%] nav-filter`} ref={divRef}>
                 <Link 
                     href="#" 
-                    className='block neon-icons-nav font-bold text-[var(--text1)] z-3' 
+                    className='block link-nav font-bold text-sm sm:text-lg z-3' 
                     onClick={() => {
                         setCurrentIndex(0); 
                         moveSpan(homeRef.current)}} 
@@ -49,7 +49,7 @@ function NavBar({ className }: { className: string }) {
                 </Link>
                 <Link 
                     href="#" 
-                    className='block neon-icons-nav font-bold text-[var(--text1)] z-3' 
+                    className='block link-nav font-bold text-sm sm:text-lg z-3' 
                     onClick={() => {
                         setCurrentIndex(1); 
                         moveSpan(workRef.current)}} 
@@ -58,7 +58,7 @@ function NavBar({ className }: { className: string }) {
                 </Link>
                 <Link 
                     href="#" 
-                    className='block neon-icons-nav font-bold text-[var(--text1)] z-3' 
+                    className='block link-nav font-bold text-sm sm:text-lg z-3' 
                     onClick={() => {
                         setCurrentIndex(2); 
                         moveSpan(contactRef.current)}} 
@@ -66,7 +66,7 @@ function NavBar({ className }: { className: string }) {
                             Contact
                 </Link>
                 <span 
-                    className={`absolute h-8 bg-[#820085] z-2 rounded-xl transition-all ease-out duration-500`}
+                    className={`span-nav absolute h-8 bg-[#820085] z-2 rounded-2xl transition-all ease-out duration-500`}
                     style={{ width: `${spanWidth}px`, left: `${leftPosition}px`, transform: "translateX(-50%)" }}
                 >
                 </span>

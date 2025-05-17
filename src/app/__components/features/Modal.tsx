@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PopUp({ title, message, onClose } :{ title: string, message: string, onClose: () => void }) {
+function Modal({ title, message, onClose } :{ title: string, message: string, onClose: () => void }) {
   return (
     <div className='pop-container'>
         <div className='pop-card'>
@@ -12,4 +12,4 @@ function PopUp({ title, message, onClose } :{ title: string, message: string, on
   )
 }
 
-export default PopUp;
+export default Modal;
