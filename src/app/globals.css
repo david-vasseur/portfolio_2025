@@ -54,6 +54,7 @@ body::-webkit-scrollbar {
 }
 
 .span-nav {
+	will-change: transform;
 	filter: drop-shadow(0 0 1.25px #820085) 
 		  	drop-shadow(0 0 2.5px #820085) 
 		  	drop-shadow(0 0 5px #820085);
