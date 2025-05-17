@@ -1,26 +1,325 @@
 @import "tailwindcss";
 
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background: #ffffff;
+	--foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-notoSans);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: linear-gradient(to top left, #6E56CF 0%, #6E56CF 1%, #1B1525 90%, #1B1525 100%);;
+	height: 300vh;
+	max-height: 300vh;
+	color: var(--foreground);
+	scrollbar-width: none !important;           
+	-ms-overflow-style: none !important;
 }
+
+body::-webkit-scrollbar {
+  display: none !important;
+}
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+.neon-icons-nav {
+	transition: all .5s;
+}
+
+.neon-icons-nav:hover {
+  color: #3C2E69;
+  filter: drop-shadow(0 0 1.25px #FFC9FF) 
+		  drop-shadow(0 0 2.5px #FFC9FF) 
+		  drop-shadow(0 0 5px #FFC9FF);
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------------------*/
+
+.abbb1 {
+	animation: acc1 .3s .1s ease-in-out;
+}
+
+.acc {
+  	animation: acc .3s ease-in-out;
+}
+
+.acc1 {
+  	animation: acc .3s .05s ease-in-out;
+}
+
+.acc2 {
+  	animation: acc .3s .1s ease-in-out;
+}
+
+.acc3 {
+  	animation: acc .3s 0.15s ease-in-out;
+}
+
+.acc4 {
+  	animation: acc .3s .2s ease-in-out;
+}
+
+.acc5 {
+  	animation: acc .3s .25s ease-in-out;
+}
+
+.accc {
+  	animation: accc .3s ease-in-out;
+}
+
+.accc1 {
+  	animation: accc .3s .05s ease-in-out;
+}
+
+.accc2 {
+  	animation: accc .3s .1s ease-in-out;
+}
+
+.accc3 {
+  	animation: accc .3s 0.15s ease-in-out;
+}
+
+.accc4 {
+  	animation: accc .3s .2s ease-in-out;
+}
+
+.accc5 {
+  	animation: accc .3s .25s ease-in-out;
+}
+
+/* ---- CONTACT ---- */
+
+.contact-form input:focus, .contact-form textarea:focus {
+   outline: none;
+}
+
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill {
+  background-color: rgba(0,0,0,0.1) !important; 
+  color: var(--text1) !important; 
+  border-color: var(--accent1) !important; 
+  -webkit-box-shadow: 0 0 0px 1000px var(--border) inset !important; 
+  box-shadow: 0 0 0px 1000px var(--border) inset !important;
+  -webkit-text-fill-color: var(--text1) !important;
+}
+
+.contact-form input:autofill,
+.contact-form textarea:autofill {
+  background-color: rgba(0,0,0,0.1) !important; 
+  color: var(--text1) !important; 
+  border-color: var(--accent1) !important; 
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+	backdrop-filter: blur(5px);
+}
+
+.form-right {
+    flex: 1;
+}
+
+.form-left {
+    flex: 1;
+    padding: 20px;
+}
+
+.neon-icons {
+  	transition: all .5s;
+}
+
+.neon-icons:hover {
+	color: #3C2E69;
+	filter: drop-shadow(0 0 2.5px #ffffff) 
+			drop-shadow(0 0 5px #ffffff) 
+			drop-shadow(0 0 10px #ffffff);
+	cursor: pointer;
+}
+
+.shad {
+  	text-shadow: #1B1525 5px 5px 10px;
+}
+
+.shad1 {
+  	text-shadow: var(--text2) 2px 2px 30px;
+}
+
+.bord {
+	position: absolute;
+	width: 120%;
+	height: 150%;
+	top: 0;
+	right: 0;
+	background-color: var(--accent2);
+	transform: rotate(12deg) skewY(45deg);
+	transform-origin: bottom right;
+	box-shadow: var(--primary) -10px -10px 40px;
+}
+
+.input-container {
+	position: relative;
+}
+
+.input-container label {
+	transition: opacity .2s ease-in-out;
+}
+
+.input-container1 label {
+	transition: opacity .2s ease-in-out;
+}
+
+.input-class {
+	position: relative;
+}
+
+.input-container::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--text1);
+	transition: all .3s ease-out;
+	z-index: 10;
+	filter: drop-shadow(0 0 2.5px #FFC9FF) 
+			drop-shadow(0 0 5px #FFC9FF) 
+			drop-shadow(0 0 10px #FFC9FF);
+}
+
+.input-container1::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 2px;
+	transform: translateY(-6px);
+	background-color: var(--text1);
+	transition: all .3s ease-out;
+	z-index: 10;
+	filter: drop-shadow(0 0 2.5px #FFC9FF) 
+			drop-shadow(0 0 5px #FFC9FF) 
+			drop-shadow(0 0 10px #FFC9FF);
+}
+
+.input-container:focus-within::after {
+	width: 100%; 
+}
+
+.input-container:focus-within label {
+	opacity: 0.2;
+}
+
+.input-container1:focus-within label {
+	opacity: 0.2;
+}
+
+.input-container1:focus-within::after {
+	width: 100%; 
+}
+
+/*---- POP-UP ----*/
+
+.pop-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	backdrop-filter: blur(20px);
+	z-index: 30;
+}
+
+.pop-card {
+	position: absolute;
+	width: 30vw;
+	height: 30vh;
+	border: solid 3px var(--accent1);
+	background-color: rgba(0, 0, 0, 0.2);
+	transform: translate(-50%, -50%);
+	color: var(--text1);
+	border-radius: 10px;
+	left: 50%;
+	top: 50%;
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: #3D0E3E 5px 5px 40px;
+}
+
+.neon-icons-button {
+	transition: all .5s;
+}
+
+.neon-icons-button:hover {
+  color: var(--text2);
+  filter: drop-shadow(0 0 1.25px #FFC9FF) 
+		  drop-shadow(0 0 2.5px #FFC9FF) 
+		  drop-shadow(0 0 5px #FFC9FF);
+  cursor: pointer;
+}
+
+.reflect-icons {
+	transform-style: preserve-3d;
+	transform: rotateX(180deg) perspective(200px) translateY(-0.5rem);
+	opacity: 0.2;
+	filter: blur(2px);
+	mask-image: linear-gradient(to top, var(--text1) 10%, rgba(0, 0, 0, 0.4) 30% , rgba(0, 0, 0, 0.1) 70%);
+}
+
+
+@keyframes acc {
+	from {
+		transform: translateY(10rem);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes accc {
+	from {
+		transform: translateY(-10rem);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes acc1 {
+	from {
+		transform: translateX(-20rem);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(-10px);
+		opacity: 1;
+	}
+} 

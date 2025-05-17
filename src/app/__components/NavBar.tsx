@@ -1,0 +1,78 @@
+"use client"
+import { usePage } from '@/hooks/pageContext';
+import Link from 'next/link';
+import React, { useEffect, useRef, useState } from 'react'
+
+function NavBar({ className }: { className: string }) {
+
+    const divRef = useRef<HTMLDivElement>(null);
+    const homeRef = useRef<HTMLAnchorElement>(null);
+    const workRef = useRef<HTMLAnchorElement>(null);
+    const contactRef = useRef<HTMLAnchorElement>(null);
+    const { currentIndex, setCurrentIndex } = usePage();
+
+    useEffect(() => {
+        if (homeRef.current && divRef.current && currentIndex === 0) {
+            moveSpan(homeRef.current)
+        }
+        if (workRef.current && divRef.current && currentIndex === 1) {
+            moveSpan(workRef.current)
+        }
+        if (contactRef.current && divRef.current && currentIndex === 2) {
+            moveSpan(contactRef.current)
+        }
+    }, [currentIndex])
+
+    const [leftPosition, setLeftPosition] = useState<number>()
+    const [spanWidth, setSpanWidth] = useState<number>();    
+    
+    const moveSpan = (ref: HTMLAnchorElement | null) => {
+        if (!ref || !divRef.current) return;
+        const width = ref.offsetWidth;
+        const left = ref.offsetLeft + width / 2;
+        setSpanWidth(width + 24); 
+        setLeftPosition(left);
+    };
+    
+
+	return (
+        <div className={className}>        
+            <div className={`relative h-[50px] px-[2rem] py-[1.5rem] rounded-4xl flex justify-around items-center gap-6 bg-gray-800 shadow-2xl border-2 border-[#5F606A] -translate-x-[50%]`} ref={divRef}>
+                <Link 
+                    href="#" 
+                    className='block neon-icons-nav font-bold text-[var(--text1)] z-3' 
+                    onClick={() => {
+                        setCurrentIndex(0); 
+                        moveSpan(homeRef.current)}} 
+                        ref={homeRef}>
+                            Home
+                </Link>
+                <Link 
+                    href="#" 
+                    className='block neon-icons-nav font-bold text-[var(--text1)] z-3' 
+                    onClick={() => {
+                        setCurrentIndex(1); 
+                        moveSpan(workRef.current)}} 
+                        ref={workRef}>
+                            Work
+                </Link>
+                <Link 
+                    href="#" 
+                    className='block neon-icons-nav font-bold text-[var(--text1)] z-3' 
+                    onClick={() => {
+                        setCurrentIndex(2); 
+                        moveSpan(contactRef.current)}} 
+                        ref={contactRef}>
+                            Contact
+                </Link>
+                <span 
+                    className={`absolute h-8 bg-[#820085] z-2 rounded-xl transition-all ease-out duration-500`}
+                    style={{ width: `${spanWidth}px`, left: `${leftPosition}px`, transform: "translateX(-50%)" }}
+                >
+                </span>
+            </div>
+        </div>
+	)
+}
+
+export default NavBar;
