@@ -37,7 +37,7 @@ function Wrapper({ children }: { children :React.ReactNode }) {
                 return () => node.removeEventListener('wheel', handleWheel);
             }
             
-        }, []);
+        }, [handleWheel]);
 
     return (
         <div id="#wrapper" className="max-h-[300vh]" ref={containerRef}>

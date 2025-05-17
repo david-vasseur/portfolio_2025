@@ -1,23 +1,10 @@
 "use client"
 
-import { useForm } from '@tanstack/react-form'
 import { useState } from 'react'
 import PopUp from './PopUp'
 
 export default function Page() {
 	const [pop, setPop] = useState(false)
-
-	const form = useForm({
-		defaultValues: {
-			name: '',
-			email: '',
-			message: '',
-		},
-		onSubmit: async ({ value }) => {
-			if (value) setPop(true)
-			console.log(value)
-		},
-	})
 
 	return (
 		<div className="flex flex-col gap-5">
