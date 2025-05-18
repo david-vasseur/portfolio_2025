@@ -1,7 +1,7 @@
 "use client";
 import { usePage } from '@/hooks/pageContext';
-import { createWheelHandler } from '@/lib/scrollHandlers';
-import React, { useCallback, useEffect, useRef } from 'react'
+import { createTouchHandler, createWheelHandler } from '@/lib/scrollHandlers';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react'
 
 function Wrapper({ children }: { children :React.ReactNode }) {
 
@@ -18,37 +18,10 @@ function Wrapper({ children }: { children :React.ReactNode }) {
         [setCurrentIndex, children]
     );
 
-    const handleTouchStart = (e: TouchEvent) => {
-        touchStartY.current = e.touches[0].clientY;
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-        touchEndY.current = e.touches[0].clientY;
-    };
-
-    const handleTouchEnd = () => {
-        if (touchStartY.current === null || touchEndY.current === null) return;
-        if (isScrollingRef.current) return;
-
-        const distance = touchStartY.current - touchEndY.current;
-        const threshold = 50; 
-
-        const maxIndex = React.Children.count(children) - 1;
-
-        isScrollingRef.current = true;
-        setTimeout(() => {
-            isScrollingRef.current = false;
-        }, 600);
-
-        if (distance > threshold) {
-            setCurrentIndex((prev: number) => Math.min(prev + 1, maxIndex));
-        } else if (distance < -threshold) {
-            setCurrentIndex((prev: number) => Math.max(prev - 1, 0));
-        }
-
-        touchStartY.current = null;
-        touchEndY.current = null;
-    };
+    const { handleTouchStart, handleTouchMove, handleTouchEnd } = useMemo(
+        () => createTouchHandler(setCurrentIndex, React.Children.count(children), touchStartY, touchEndY, isScrollingRef),
+        [setCurrentIndex, children, touchStartY, touchEndY]
+    );
     
     useEffect(() => {
         const node = containerRef.current;
