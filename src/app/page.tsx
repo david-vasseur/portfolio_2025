@@ -5,15 +5,21 @@ import SectionHome from "./__components/layout/SectionHome";
 import SectionWork from "./__components/layout/SectionWork";
 import SectionContact from "./__components/layout/SectionContact";
 import Transitions from "./__components/features/Transitions";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePage } from "@/hooks/pageContext";
 
 export default function Home() {
 
 	const [isOpen, setIsOpen] = useState(false);
 	const { currentIndex } = usePage();
+	const isFirstRender = useRef(true);
 
 	useEffect(() => {
+		if (isFirstRender.current) {
+			isFirstRender.current = false;
+			return;
+		}
+
 		const goTransition = () => {
 			setIsOpen((prev) => !prev);
         	setTimeout(() => {setIsOpen((prev) => !prev)}, 1000);
