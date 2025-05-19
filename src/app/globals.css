@@ -9,8 +9,15 @@ html {
 }
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--background: linear-gradient(to top left, #6E56CF 0%, #6E56CF 1%, #1B1525 90%, #1B1525 100%);
+	--foreground: #E2DDFE;
+	--border: #5F606A;
+	--accent1: #820085;
+	--accent2: #6C006F;
+	--text1: #FFC9FF;
+	--text2: #F7F;
+	--primary: #3D0E3E;
+	--secondary: #7E0081;
 }
 
 @theme inline {
@@ -29,6 +36,19 @@ body {
 
 body::-webkit-scrollbar {
   display: none !important;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------- UX ------*/
+
+.neon-icons {
+  	transition: all .5s;
+}
+
+.neon-icons:hover {
+	color: #3C2E69;
+	filter: drop-shadow(0 0 2.5px #ffffff) 
+			drop-shadow(0 0 5px #ffffff);
+	cursor: pointer;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------------- Logo ------*/
@@ -153,3 +173,4 @@ body::-webkit-scrollbar {
 	}
 }
 
+/*-------------------------------------------------------------------------------------------------------------------------------------- ########## ------*/
