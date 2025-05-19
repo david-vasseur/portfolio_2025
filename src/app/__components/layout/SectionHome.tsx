@@ -62,7 +62,7 @@ export default function Page() {
     ];
 
 	return (
-		<div className="flex flex-col gap-5 items-center justify-evenly h-[90vh]">
+		<div className="flex flex-col gap-5 items-center justify-evenly h-[90%]">
 			<HomeTitle />
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                 <p className="w-[90vw] sm:w-[60vw] text-xs sm:text-xl text-[var(--text1)] acc2 text-justify">Originally from Paris and now living in the Gard region, I come from a rich and diverse background in commerce. I climbed the ladder from salesperson to commercial director and site manager, discovering along the way a deep passion for computing and logic. Driven by an insatiable curiosity and a strong desire to learn, I naturally turned to web development. Algorithmic challenges and technical problem-solving motivate me, and I find great satisfaction in addressing complex issues through programming. Outside of development, I&apos;m passionate about 3D and modding, regularly exploring new ways to push the boundaries of technology. My atypical background allows me to bring a pragmatic and structured approach to every project I work on.</p>
