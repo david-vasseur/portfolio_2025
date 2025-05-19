@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+.profil-pic {
+	mask-image: url(/mask3b.png);
+	mask-composite:  intersect, add;
+	mask-size: contain; 
+	mask-repeat: no-repeat; 
+	mask-position: center; 
+	filter: grayscale(1.5);
+}
+
+@keyframes picMove {
+	from {
+		transform: rotate(180deg);
+	}
+	50% {
+		transform: rotate(210deg);
+	}
+	to {
+		transform: rotate(180deg);
+	}
+}
+
+@keyframes picMove1 {
+	from {
+		transform: rotate(10deg);
+	}
+	50% {
+		transform: rotate(-80deg);
+	}
+	to {
+		transform: rotate(10deg);
+	}
+}
+
+.cont-pic::before {
+	content: "";
+	width: 120%;
+	height: 120%;
+	background-color: var(--accent1);
+	filter: opacity(0.3);
+	transform: rotate(180deg);
+	border-radius: 50% 50% 80% 20% / 80% 50% 50% 20% ;
+	border: #E2DDFE 2px solid;
+	position: absolute;
+	top: -10%;
+	left: -10%;
+	animation: picMove 40s ease-in infinite;
+}
+
+.cont-pic::after {
+	content: "";
+	width: 120%;
+	height: 120%;
+	background-color: var(--accent2);
+	filter: opacity(0.3);
+	transform: rotate(10deg);
+	border-radius: 50% 50% 80% 20% / 80% 50% 50% 20% ;
+	border: #E2DDFE 2px solid;
+	position: absolute;
+	top: -10%;
+	left: -10%;
+	animation: picMove1 120s ease-in infinite;
+}

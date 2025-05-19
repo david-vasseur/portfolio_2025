@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local';
-import "./globals.css";
+import "./__styles/globals.css";
+import "./__styles/ux.css";
 import Logo from "./__components/ux/Logo";
 import NavBar from "./__components/layout/NavBar";
 import { PageProvider } from "@/hooks/pageContext";

@@ -10,6 +10,7 @@ import HomeTitle from "../features/HomeTitle";
 import { FiPhone } from "react-icons/fi";
 import { MdAlternateEmail } from "react-icons/md";
 import ContactIcons from "../features/ContactIcons";
+import ProfilePic from "../ux/ProfilePic";
 
 type FetchedIconsProps = {
     id: number,
@@ -63,14 +64,17 @@ export default function Page() {
 
 	return (
 		<div className="flex flex-col gap-5 items-center justify-evenly h-[90%]">
-			<HomeTitle />
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-                <p className="w-[90vw] sm:w-[60vw] text-xs sm:text-xl text-[var(--text1)] acc2 text-justify">Originally from Paris and now living in the Gard region, I come from a rich and diverse background in commerce. I climbed the ladder from salesperson to commercial director and site manager, discovering along the way a deep passion for computing and logic. Driven by an insatiable curiosity and a strong desire to learn, I naturally turned to web development. Algorithmic challenges and technical problem-solving motivate me, and I find great satisfaction in addressing complex issues through programming. Outside of development, I&apos;m passionate about 3D and modding, regularly exploring new ways to push the boundaries of technology. My atypical background allows me to bring a pragmatic and structured approach to every project I work on.</p>
-                <div className="flex sm:flex-col gap-4">
+            <div className="w-[100%] flex items-center justify-evenly">
+                <ProfilePic />
+                <HomeTitle />
+            </div>			
+            <div className="w-[100%] flex flex-col-reverse sm:flex-row gap-4 items-center justify-evenly">
+                <div className="flex gap-4 sm:gap-10">
                     {fetchedContacts.map(contact => (
                         <ContactIcons key={contact.id} href={contact.href || '#'} icons={contact.content} />
                     ))}
                 </div>
+                <p className="w-[90vw] sm:w-[40vw] font-black p-2 text-xs sm:text-xl text-[var(--text1)] acc2 text-justify border-b-1 border-b-[var(--text2)] border-l-1 border-l-[var(--text2)]">Originally from Paris and now living in the Gard region, I come from a rich and diverse background in commerce. I climbed the ladder from salesperson to commercial director and site manager, discovering along the way a deep passion for computing and logic. Driven by an insatiable curiosity and a strong desire to learn, I naturally turned to web development. Algorithmic challenges and technical problem-solving motivate me, and I find great satisfaction in addressing complex issues through programming. Outside of development, I&apos;m passionate about 3D and modding, regularly exploring new ways to push the boundaries of technology. My atypical background allows me to bring a pragmatic and structured approach to every project I work on.</p>
             </div>	                        
             <div className="flex justify-around">
                 {fetchedSkills.map(skill => (
