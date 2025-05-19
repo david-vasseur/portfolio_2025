@@ -43,27 +43,21 @@ function GuestBookForm() {
                 form.handleSubmit()
                 }}
             >
-                <form.AppField
-                    
-                    name="name"
-                    children={(field) => (
+                <form.AppField name='name'>
+                    {(field) => (
                         <field.Input placeholder="Your Name" type="text" />
                     )}
-                />
-                <form.AppField
-                    
-                    name="email"
-                    children={(field) => (
+                </form.AppField>
+                <form.AppField name="email">
+                    {(field) => (
                         <field.Input placeholder="Your Email" type="email" />
                     )}
-                />
-                <form.AppField
-                    
-                    name="rate"
-                    children={(field) => (
+                </form.AppField>
+                <form.AppField name="rate">
+                    {(field) => (
                         <field.Select options={fetchedStars} />
                     )}
-                />
+                </form.AppField>
                 <form.AppForm>
                     <form.Button label="Submit" />
                 </form.AppForm>
