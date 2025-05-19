@@ -35,7 +35,7 @@ export default function Home() {
 		<main className="w-full">
 			<Transitions isOpen={isOpen} onClose={() => setIsOpen(false)} />
 			<Wrapper>
-				<section id="section-1" className="h-[100dvh] w-full flex justify-center items-center">
+				<section id="section-1" className="h-[100dvh] w-full flex justify-center items-end">
 					<SectionHome />
 				</section>
 				<section id="section-2" className="h-[100dvh] w-full flex justify-center items-center">
