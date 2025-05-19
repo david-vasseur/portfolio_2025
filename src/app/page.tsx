@@ -41,7 +41,7 @@ export default function Home() {
 				<section id="section-2" className="h-[100dvh] w-full flex justify-center items-center">
 					<SectionWork />
 				</section>
-				<section id="section-3" className="h-[100dvh] w-full flex justify-center items-center">
+				<section id="section-3" className="h-[100dvh] w-full flex justify-center items-end">
 					<SectionContact />
 				</section>
 			</Wrapper>	
