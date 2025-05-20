@@ -35,8 +35,8 @@ export default function RootLayout({
 		<PageProvider>
 			<html lang="en">
 				<body className={`${notoSans.className} relative`}>
-					<Logo className="hidden sm:block sm:fixed left-2 top-2 z-2" />
-					<NavBar className="fixed left-[50%] top-2 z-2" />
+					<Logo className="hidden sm:fixed left-2 top-2 z-2" />
+					<NavBar className="fixed left-[50%] top-2 z-2 scale-[0.8] 2xl:scale-[1]" />
 					{children}
 				</body>
 			</html>

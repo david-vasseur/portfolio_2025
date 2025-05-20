@@ -63,10 +63,10 @@ export default function Page() {
     ];
 
 	return (
-		<div className="grid grid-rows-[10dvh_1fr_15dvh] h-[100dvh]">
+		<div className="grid grid-rows-[15%_1fr_15%] h-[100%]">
             <div className="w-[100vw] h-full"> 
             </div>
-                <div className="w-[100vw] grid grid-cols-[1fr] grid-rows-[15dvh_45dvh_15dvh] xl:grid-rows-[20dvh_55dvh] xl:grid-cols-[40vw_60vw] 2xl:grid-rows-2">
+                <div className="w-[100vw] grid grid-cols-[1fr] grid-rows-[15svh_40svh_15svh] xl:grid-rows-[20svh_50svh] xl:grid-cols-[40vw_60vw] 2xl:grid-rows-2">
                 <div className="hidden xl:flex h-full w-full justify-center items-center">
                     <ProfilePic />
                 </div>
