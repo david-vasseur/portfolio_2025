@@ -37,7 +37,7 @@ function NavBar({ className }: { className: string }) {
 
 	return (
         <div className={className}>        
-            <div className={`relative h-[50px] px-[1.3rem] py-[1rem] rounded-4xl flex justify-around items-center gap-6 bg-gray-800 shadow-2xl border-2 border-[#5F606A] -translate-x-[50%] nav-filter`} ref={divRef}>
+            <div className={`relative h-[50px] px-[1.3rem] py-[1rem] rounded-4xl flex justify-around items-center gap-6 bg-gray-800 shadow-2xl border-2 border-border-1 -translate-x-[50%] nav-filter`} ref={divRef}>
                 <Link 
                     href="#" 
                     className='block link-nav font-bold text-sm sm:text-lg z-3' 
