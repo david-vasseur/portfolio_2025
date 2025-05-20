@@ -6,11 +6,11 @@ function Skills({ title, icons }: { title: string, icons: IconType[] }) {
 
     return (
         <div className=" w-[30vw] flex flex-col justify-center items-center gap-4 acc5">
-            <h3 className="p-2 xs:text-xl sm:text-3xl text-[var(--text2)] font-black border-b-1 border-b-[var(--text-2)] border-l-1 border-l-[var(--text-2)]">{title}</h3>
+            <h3 className="p-2 text-md md:text-xl 2xl:text-3xl text-text-2 font-black border-b-1 border-b-[var(--text2)] border-l-1 border-l-[var(--text2)] shadow-subtitle">{title}</h3>
             <div className="flex gap-2">
                 {icons.map((Icon: IconType, index) => {
                     return (
-                        <Icon key={index} className="text-[1rem] sm:text-[2rem] text-[#FFC9FF] neon-icons" />
+                        <Icon key={index} className="text-[1rem] xl:text-[1.5rem] 2xl:text-[2rem] text-text-1 neon-icons" />
                     )
                 })}
             </div>

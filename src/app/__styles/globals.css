@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+@layer {
+
+	.subtitle-responsive {
+		@apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl;
+	}
+
+	.title-responsive {
+    	@apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl;
+	}
+
+	.shadow-subtitle {
+		box-shadow: -5px 5px 5px #24242477;
+	}
+}
+
+@theme inline {
+	--font-sans: var(--font-notoSans);
+	--color-border-1: #5F606A;
+	--color-accent-1: #820085;
+	--color-accent-2: #6C006F;
+	--color-text-1: #FFC9FF;
+	--color-text-2: #F7F;
+	--color-primary: #3D0E3E;
+	--color-secondary: #7E0081;
+	--color-shadow: #24242477;
+}
+
 html {
 	margin: 0;
 	padding: 0;
@@ -18,12 +45,8 @@ html {
 	--text2: #F7F;
 	--primary: #3D0E3E;
 	--secondary: #7E0081;
+	--shadow: #242424;
 }
-
-@theme inline {
-	--font-sans: var(--font-notoSans);
-}
-
 
 body {
 	background: linear-gradient(to top left, #6E56CF 0%, #6E56CF 1%, #1B1525 90%, #1B1525 100%);;
