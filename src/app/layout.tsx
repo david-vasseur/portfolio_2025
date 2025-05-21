@@ -39,7 +39,7 @@ export default function RootLayout({
 				<body className={`${notoSans.className} relative`}>
 					<AuroraBackground />
 					<Logo className="hidden sm:fixed left-2 top-2 z-2" />
-					<NavBar className="fixed left-[50%] top-2 z-2 scale-[0.8] 2xl:scale-[1]" />
+					<NavBar className="fixed left-1/2 top-2 -translate-x-1/2 z-2 scale-[0.8] 2xl:scale-[1]" />
 						{children}
 				</body>
 				
