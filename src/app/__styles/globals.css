@@ -99,6 +99,49 @@ body::-webkit-scrollbar {
 	mask-image: linear-gradient(to top, white 10%, rgba(0, 0, 0, 0.4) 30% , rgba(0, 0, 0, 0.1) 70%);
 }
 
+.test-border::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border: 2px solid var(--text1);
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	filter: drop-shadow(0 0 0.5px #ffc9ff86)
+			drop-shadow(0 0 2px #ffc9ff71)
+			drop-shadow(0 0 5px #ffc9ff3a);
+	border-radius: inherit;
+	pointer-events: none;
+}
+
+.title {
+	position: relative;
+}
+
+.title::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -2px;
+	width: 0;
+	height: 2px;
+	background-color: var(--text1);
+	z-index: 10;
+	filter: drop-shadow(0 0 2.5px #FFC9FF) 
+			drop-shadow(0 0 5px #ffc9ffad) 
+			drop-shadow(0 0 10px #ffc9ff8a);
+	animation: startOutline .5s ease-in-out forwards;
+}
+
+@keyframes startOutline {
+	from {
+		width: 0;
+	}	
+	to {
+		width: 100%;
+	}	
+}
+
 /*-------------------------------------------------------------------------------------------------------------------------------------- Logo ------*/
 
 .logo-filter {

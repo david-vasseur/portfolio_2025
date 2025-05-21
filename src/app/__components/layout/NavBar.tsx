@@ -37,7 +37,7 @@ function NavBar({ className }: { className: string }) {
 
 	return (
         <div className={className}>        
-            <div className={`relative h-[50px] px-[1.3rem] py-[1rem] rounded-4xl flex justify-around items-center gap-6 bg-gray-800 shadow-2xl border-2 border-border-1 nav-filter`} ref={divRef}>
+            <div className={`relative h-[50px] px-[1.3rem] py-[1rem] rounded-4xl flex justify-around items-center gap-6 bg-gray-800 shadow-2xl border-2 border-border-1 nav-filter test-border`} ref={divRef}>
                 <Link 
                     href="#" 
                     className={`block link-nav ${currentIndex === 0 ? "text-accent-1" : ""} font-bold text-sm sm:text-lg z-3`} 
@@ -66,7 +66,7 @@ function NavBar({ className }: { className: string }) {
                             Contact
                 </Link>
                 <span 
-                    className={`span-nav absolute h-8 bg-text-2/70 z-2 rounded-2xl transition-all ease-out duration-500`}
+                    className={`span-nav absolute h-8 bg-text-2/50 z-2 rounded-2xl transition-all ease-out duration-500`}
                     style={{ width: `${spanWidth}px`, left: `${leftPosition}px`, transform: "translateX(-50%)" }}
                 >
                 </span>
