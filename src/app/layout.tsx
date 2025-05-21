@@ -6,7 +6,6 @@ import Logo from "./__components/ux/Logo";
 import NavBar from "./__components/layout/NavBar";
 import { PageProvider } from "@/hooks/pageContext";
 import { AuroraBackground } from "./__components/ux/AuroraBackground";
-
 const notoSans = localFont({
 	src: [
 		{
@@ -36,6 +35,9 @@ export default function RootLayout({
 		
 		<PageProvider>
 			<html lang="en">
+				<head>
+					<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+				</head>
 				<body className={`${notoSans.className} relative`}>
 					<AuroraBackground />
 					<Logo className="hidden sm:fixed left-2 top-2 z-2" />
