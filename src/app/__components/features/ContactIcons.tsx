@@ -8,7 +8,7 @@ function ContactIcons({ icons, href }: { icons: IconType[], href: string }) {
             {icons.map((Icon: IconType , index) => (
                 <div key={index} className="group">
                     <Link href={href} target="_blank" rel="noopener noreferrer">
-                        <Icon className="text-[4rem] text-text-1 neon-icons" />
+                        <Icon className="text-[3rem] xl:text-[4rem] text-text-1 neon-icons" />
                     </Link>
                     <Icon className="text-[3rem] sm:text-[4rem] reflect-icons transition-all duration-[.5s] ease-in-out group-hover:scale-[1.05] group-hover:text-text-2" />
                 </div>
