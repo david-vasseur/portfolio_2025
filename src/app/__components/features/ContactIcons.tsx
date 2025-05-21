@@ -4,7 +4,7 @@ import { IconType } from 'react-icons';
 
 function ContactIcons({ icons, href }: { icons: IconType[], href: string }) {
     return (
-        <div className="flex sm:flex-col gap-4">
+        <div className="py-2 flex sm:flex-col gap-4">
             {icons.map((Icon: IconType , index) => (
                 <div key={index} className="group z-3">
                     <Link href={href} target="_blank" rel="noopener noreferrer">
