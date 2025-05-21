@@ -64,7 +64,7 @@ html {
 }
 
 body {
-	background: linear-gradient(to top left, #6E56CF 0%, #6E56CF 1%, #1B1525 90%, #1B1525 100%);;
+	background: transparent;
 	height: 300vh;
 	max-height: 300vh;
 	color: #ededed;

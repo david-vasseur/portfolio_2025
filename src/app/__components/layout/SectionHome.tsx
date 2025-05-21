@@ -11,7 +11,6 @@ import { FiPhone } from "react-icons/fi";
 import { MdAlternateEmail } from "react-icons/md";
 import ContactIcons from "../features/ContactIcons";
 import ProfilePic from "../ux/ProfilePic";
-import { AuroraBackground } from "../ux/AuroraBackground";
 
 type FetchedIconsProps = {
     id: number,
@@ -64,7 +63,6 @@ export default function Page() {
     ];
 
 	return (
-        <AuroraBackground>
 		<div className="grid grid-rows-[15%_1fr_20%] h-[100%]">
             <div className="w-[100vw] h-full"> 
             </div>
@@ -94,6 +92,5 @@ export default function Page() {
                 ))}
             </div>   
 		</div>
-        </AuroraBackground>
 	)
 };
