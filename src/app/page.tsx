@@ -38,10 +38,10 @@ export default function Home() {
 				<section id="section-1" className="h-[100dvh] w-full">
 					<SectionHome />
 				</section>
-				<section id="section-2" className="h-[100dvh] w-full flex justify-center items-center">
+				<section id="section-2" className="h-[100dvh] w-full">
 					<SectionWork />
 				</section>
-				<section id="section-3" className="h-[100dvh] w-full flex justify-center items-end">
+				<section id="section-3" className="h-[100dvh] w-full">
 					<SectionContact />
 				</section>
 			</Wrapper>	

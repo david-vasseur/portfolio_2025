@@ -15,6 +15,7 @@
 	}
 }
 
+
 @theme inline {
 	--font-sans: var(--font-notoSans);
 	--color-border-1: #5F606A;
@@ -25,6 +26,20 @@
 	--color-primary: #3D0E3E;
 	--color-secondary: #7E0081;
 	--color-shadow: #24242477;
+
+	--animate-aurora: aurora 180s linear infinite;
+	@keyframes aurora {
+		from {
+		background-position:
+			50% 50%,
+			50% 50%;
+		}
+		to {
+		background-position:
+			350% 50%,
+			350% 50%;
+		}
+	}
 }
 
 html {
@@ -65,6 +80,7 @@ body::-webkit-scrollbar {
 
 .neon-icons {
   	transition: all .5s;
+	z-index: 4;
 }
 
 .neon-icons:hover {
@@ -75,11 +91,12 @@ body::-webkit-scrollbar {
 }
 
 .reflect-icons {
-	transform-style: preserve-3d;
-	transform: rotateX(180deg) perspective(200px) translateY(-0.5rem);
 	opacity: 0.2;
 	filter: blur(2px);
-	mask-image: linear-gradient(to top, var(--text1) 10%, rgba(0, 0, 0, 0.4) 30% , rgba(0, 0, 0, 0.1) 70%);
+	transform-style: preserve-3d;
+	transform: rotateX(180deg) perspective(200px) translateY(-0.5rem);
+	color: var(--text1);
+	mask-image: linear-gradient(to top, white 10%, rgba(0, 0, 0, 0.4) 30% , rgba(0, 0, 0, 0.1) 70%);
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------------- Logo ------*/

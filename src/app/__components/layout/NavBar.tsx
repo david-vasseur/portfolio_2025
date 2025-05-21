@@ -40,7 +40,7 @@ function NavBar({ className }: { className: string }) {
             <div className={`relative h-[50px] px-[1.3rem] py-[1rem] rounded-4xl flex justify-around items-center gap-6 bg-gray-800 shadow-2xl border-2 border-border-1 -translate-x-[50%] nav-filter`} ref={divRef}>
                 <Link 
                     href="#" 
-                    className='block link-nav font-bold text-sm sm:text-lg z-3' 
+                    className={`block link-nav ${currentIndex === 0 ? "text-accent-1" : ""} font-bold text-sm sm:text-lg z-3`} 
                     onClick={() => {
                         setCurrentIndex(0); 
                         moveSpan(homeRef.current)}} 
@@ -49,7 +49,7 @@ function NavBar({ className }: { className: string }) {
                 </Link>
                 <Link 
                     href="#" 
-                    className='block link-nav font-bold text-sm sm:text-lg z-3' 
+                    className={`block link-nav ${currentIndex === 1 ? "text-accent-1" : ""} font-bold text-sm sm:text-lg z-3`} 
                     onClick={() => {
                         setCurrentIndex(1); 
                         moveSpan(workRef.current)}} 
@@ -58,7 +58,7 @@ function NavBar({ className }: { className: string }) {
                 </Link>
                 <Link 
                     href="#" 
-                    className='block link-nav font-bold text-sm sm:text-lg z-3' 
+                    className={`block link-nav ${currentIndex === 2 ? "text-accent-1" : ""} font-bold text-sm sm:text-lg z-3`} 
                     onClick={() => {
                         setCurrentIndex(2); 
                         moveSpan(contactRef.current)}} 
@@ -66,7 +66,7 @@ function NavBar({ className }: { className: string }) {
                             Contact
                 </Link>
                 <span 
-                    className={`span-nav absolute h-8 bg-[#820085] z-2 rounded-2xl transition-all ease-out duration-500`}
+                    className={`span-nav absolute h-8 bg-text-2/70 z-2 rounded-2xl transition-all ease-out duration-500`}
                     style={{ width: `${spanWidth}px`, left: `${leftPosition}px`, transform: "translateX(-50%)" }}
                 >
                 </span>

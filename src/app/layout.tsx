@@ -32,14 +32,18 @@ export default function RootLayout({
   	children: React.ReactNode;
 }>) {
 	return (
+		
 		<PageProvider>
 			<html lang="en">
+				
 				<body className={`${notoSans.className} relative`}>
 					<Logo className="hidden sm:fixed left-2 top-2 z-2" />
 					<NavBar className="fixed left-[50%] top-2 z-2 scale-[0.8] 2xl:scale-[1]" />
-					{children}
+						{children}
 				</body>
+				
 			</html>
 		</PageProvider>
+		
 	);
 }

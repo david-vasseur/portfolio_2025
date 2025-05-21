@@ -11,6 +11,7 @@ import { FiPhone } from "react-icons/fi";
 import { MdAlternateEmail } from "react-icons/md";
 import ContactIcons from "../features/ContactIcons";
 import ProfilePic from "../ux/ProfilePic";
+import { AuroraBackground } from "../ux/AuroraBackground";
 
 type FetchedIconsProps = {
     id: number,
@@ -63,6 +64,7 @@ export default function Page() {
     ];
 
 	return (
+        <AuroraBackground>
 		<div className="grid grid-rows-[15%_1fr_20%] h-[100%]">
             <div className="w-[100vw] h-full"> 
             </div>
@@ -82,7 +84,7 @@ export default function Page() {
                 </div>
 
                 <div className="h-full w-full flex justify-center items-end">
-                    <p className="w-[90vw] xl:w-[45vw] 2xl:w-[40vw] font-black p-2 pr-1 pt-0 text-xs sm:text-sm 2xl:text-xl text-[var(--text1)] text-justify border-b-1 border-b-[var(--text2)] border-l-1 border-l-[var(--text2)] shadow-subtitle">Originally from Paris and now living in the Gard region, I come from a rich and diverse background in commerce. I climbed the ladder from salesperson to commercial director and site manager, discovering along the way a deep passion for computing and logic. Driven by an insatiable curiosity and a strong desire to learn, I naturally turned to web development. Algorithmic challenges and technical problem-solving motivate me, and I find great satisfaction in addressing complex issues through programming. Outside of development, I&apos;m passionate about 3D and modding, regularly exploring new ways to push the boundaries of technology. My atypical background allows me to bring a pragmatic and structured approach to every project I work on.</p>
+                    <p className="backdrop-blur-sm w-[90vw] xl:w-[45vw] 2xl:w-[40vw] font-black p-2 pr-1 pt-0 text-xs sm:text-sm 2xl:text-xl text-[var(--text1)] text-justify border-b-1 border-b-[var(--text2)] border-l-1 border-l-[var(--text2)] rounded-xs shadow-subtitle">Originally from Paris and now living in the Gard region, I come from a rich and diverse background in commerce. I climbed the ladder from salesperson to commercial director and site manager, discovering along the way a deep passion for computing and logic. Driven by an insatiable curiosity and a strong desire to learn, I naturally turned to web development. Algorithmic challenges and technical problem-solving motivate me, and I find great satisfaction in addressing complex issues through programming. Outside of development, I&apos;m passionate about 3D and modding, regularly exploring new ways to push the boundaries of technology. My atypical background allows me to bring a pragmatic and structured approach to every project I work on.</p>
                 </div>
             </div>
 
@@ -92,5 +94,6 @@ export default function Page() {
                 ))}
             </div>   
 		</div>
+        </AuroraBackground>
 	)
 };

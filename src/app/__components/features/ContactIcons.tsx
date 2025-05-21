@@ -6,7 +6,7 @@ function ContactIcons({ icons, href }: { icons: IconType[], href: string }) {
     return (
         <div className="flex sm:flex-col gap-4">
             {icons.map((Icon: IconType , index) => (
-                <div key={index} className="group">
+                <div key={index} className="group z-3">
                     <Link href={href} target="_blank" rel="noopener noreferrer">
                         <Icon className="text-[3rem] xl:text-[4rem] text-text-1 neon-icons" />
                     </Link>
