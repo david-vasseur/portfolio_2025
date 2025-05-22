@@ -39,6 +39,14 @@ export default function Page() {
         }
     ];
 
+    const jokes = [
+        "I build fullstack apps like I cook: from scratch, spicy, and meant to be shared",
+        "MongoDB keeps my data grounded, React keeps my UI flying — I live comfortably in the tension between the two",
+        "I don't chase trends, I chase clarity — clean code, clean UX, and systems that age well",
+        "I'm the kind of developer who doesn't just fix bugs — I make sure they regret ever showing up",
+        "For me, MERN isn't just a stack — it's a playground, a workshop, and sometimes, a battlefield I genuinely enjoy returning to"
+    ]
+
     const fetchedContacts: FetchedIconsProps[] = [
         {
             id: 0,

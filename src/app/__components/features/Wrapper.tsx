@@ -42,8 +42,8 @@ function Wrapper({ children }: { children :React.ReactNode }) {
     }, [handleWheel]);
 
     return (
-        <div id="#wrapper" className="max-h-[300vh]" ref={containerRef}>
-            <div id="#inner" className="h-[300vh] transition-transform duration-[.5s] ease-in-out overflow-y-hidden" style={{ transform: `translateY(-${currentIndex * 100}vh)` }}>
+        <div id="#wrapper" className="max-h-[300svh]" ref={containerRef}>
+            <div id="#inner" className="h-[300svh] transition-transform duration-[.5s] ease-in-out overflow-y-hidden" style={{ transform: `translateY(-${currentIndex * 100}svh)` }}>
                 {children}
             </div>
         </div>
