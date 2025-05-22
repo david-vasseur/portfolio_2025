@@ -35,13 +35,13 @@ export default function Home() {
 		<main className="w-full">
 			<Transitions isOpen={isOpen} onClose={() => setIsOpen(false)} />
 			<Wrapper>
-				<section id="section-1" className="h-[100dvh] w-full">
+				<section id="section-1" className="h-[100svh] w-full">
 					<SectionHome />
 				</section>
-				<section id="section-2" className="h-[100dvh] w-full">
+				<section id="section-2" className="h-[100svh] w-full">
 					<SectionWork />
 				</section>
-				<section id="section-3" className="h-[100dvh] w-full">
+				<section id="section-3" className="h-[100svh] w-full">
 					<SectionContact />
 				</section>
 			</Wrapper>	
