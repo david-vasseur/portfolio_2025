@@ -26,6 +26,7 @@
 	--color-primary: #3D0E3E;
 	--color-secondary: #7E0081;
 	--color-shadow: #24242477;
+	--breakpoint-3xl: 2400px;
 
 	--animate-aurora: aurora 180s linear infinite;
 	@keyframes aurora {

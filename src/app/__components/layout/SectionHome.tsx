@@ -64,25 +64,25 @@ export default function Page() {
 
 	return (
 		<div className="grid grid-rows-[10%_1fr_auto] sm:grid-rows-[15%_1fr_auto] h-[100%]">
-            <div className="w-[100vw] h-full"> 
+            <div className="w-[100vw]"> 
             </div>
                 <div className="w-[100vw] grid grid-cols-[1fr] grid-rows-[auto_auto_15svh] xl:grid-rows-[20svh_45svh] xl:grid-cols-[40vw_60vw] 2xl:grid-rows-2">
                     <div className="hidden xl:flex h-full w-full justify-center items-center">
                         <ProfilePic />
                     </div>
 
-                    <div className="h-full w-full flex justify-center items-center">
+                    <div className="w-full flex justify-center items-center">
                         <HomeTitle />
                     </div>
 
-                    <div className="h-full gap-5 sm:gap-10 w-full flex justify-center items-end row-start-3 xl:row-start-2">
+                    <div className="gap-5 sm:gap-10 w-full flex justify-center items-end row-start-3 xl:row-start-2">
                         {fetchedContacts.map(contact => (
                                 <ContactIcons key={contact.id} href={contact.href || '#'} icons={contact.content} />
                             ))}
                     </div>
 
-                    <div className="2xl:pb-10 h-full w-full flex justify-center items-center sm:items-end">
-                        <p className="bg-black/10 backdrop-blur-xl w-[90vw] xl:w-[45vw] 2xl:w-[35vw] font-black p-2  text-xs sm:text-sm 2xl:text-2xl text-[var(--text1)] text-justify border-b-1 border-b-accent-2 border-l-1 border-l-accent-2 rounded-xs shadow-subtitle">Originally from Paris and now living in the Gard region, I come from a rich and diverse background in commerce. I climbed the ladder from salesperson to commercial director and site manager, discovering along the way a deep passion for computing and logic. Driven by an insatiable curiosity and a strong desire to learn, I naturally turned to web development. Algorithmic challenges and technical problem-solving motivate me, and I find great satisfaction in addressing complex issues through programming. Outside of development, I&apos;m passionate about 3D and modding, regularly exploring new ways to push the boundaries of technology. My atypical background allows me to bring a pragmatic and structured approach to every project I work on.</p>
+                    <div className="w-full flex justify-center items-center sm:items-end 3xl:items-center">
+                        <p className="bg-black/10 backdrop-blur-xl w-[90vw] xl:w-[45vw] 2xl:w-[40vw] font-black p-2  text-xs sm:text-sm 2xl:text-xl text-[var(--text1)] text-justify border-b-1 border-b-accent-2 border-l-1 border-l-accent-2 rounded-xs shadow-subtitle">Originally from Paris and now living in the Gard region, I come from a rich and diverse background in commerce. I climbed the ladder from salesperson to commercial director and site manager, discovering along the way a deep passion for computing and logic. Driven by an insatiable curiosity and a strong desire to learn, I naturally turned to web development. Algorithmic challenges and technical problem-solving motivate me, and I find great satisfaction in addressing complex issues through programming. Outside of development, I&apos;m passionate about 3D and modding, regularly exploring new ways to push the boundaries of technology. My atypical background allows me to bring a pragmatic and structured approach to every project I work on.</p>
                     </div>
                 </div>
 
