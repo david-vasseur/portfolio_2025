@@ -62,3 +62,43 @@
 	left: -10%;
 	animation: picMove1 120s ease-in infinite;
 }
+
+/** TEST **/
+
+.test-span {
+	background-color: transparent;
+	text-align: right;
+	transition: all .3s ease-in-out;
+	height: 1.5rem;
+}
+
+.test-span-contener {
+	width: fit-content;
+	height: 1.5rem;
+	overflow-y: hidden;
+}
+
+.started:hover > .test-span-contener > span {
+	transform: translateY(-100%);
+}
+
+/* @keyframes Stack {
+	from {
+		transform: translateY(0)
+	}
+	30% {
+		transform: translateY(0)
+	}
+	35% {
+		transform: translateY(-100%)
+	}
+	70% {
+		transform: translateY(-100%)
+	}
+	75% {
+		transform: translateY(-200%)
+	}
+	to {
+		transform: translateY(-200%)
+	}
+} */

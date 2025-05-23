@@ -3,13 +3,13 @@ import { cn } from "@/lib/utils";
 import React from "react";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
-  showRadialGradient?: boolean;
+  	showRadialGradient?: boolean;
 }
 
 export const AuroraBackground = ({
-  className,
-  showRadialGradient = true,
-  ...props
+	className,
+	showRadialGradient = true,
+	...props
 }: AuroraBackgroundProps) => {
 	return (
 		<div>
@@ -23,7 +23,7 @@ export const AuroraBackground = ({
 				<div
 					className="absolute inset-0 overflow-hidden"
 					style={{
-						"background": "linear-gradient(to top left, #6E56CF 0%, #6E56CF 1%, #1B1525 90%, #1B1525 100%)",
+						"background": "linear-gradient(to top left, #6E56CF 0%, #6E56CF 2%, #1B1525 90%, #1B1525 100%)",
 						"--transparent": "transparent",
 						} as React.CSSProperties}
 				>

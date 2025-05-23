@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+@media (min-width: 1920px) {
+	.title3xl > h1 {
+		font-size: 8rem;
+	}
+}
+
+@media (min-width: 2400px) {
+  .title3xl > h1 {
+    font-size: 11rem;
+  }
+  .title3xl > h2 {
+	font-size: 7rem;
+	margin-bottom: 5rem;
+  }
+
+  .skill3xl {
+	font-size: 2.5rem;
+  }
+}
+
 @layer {
 
 	.subtitle-responsive {
@@ -16,7 +36,7 @@
 }
 
 
-@theme inline {
+@theme {
 	--font-sans: var(--font-notoSans);
 	--color-border-1: #5F606A;
 	--color-accent-1: #820085;
@@ -26,6 +46,7 @@
 	--color-primary: #3D0E3E;
 	--color-secondary: #7E0081;
 	--color-shadow: #24242477;
+	--breakpoint-2xl: 1920px;
 	--breakpoint-3xl: 2400px;
 
 	--animate-aurora: aurora 180s linear infinite;
@@ -100,7 +121,13 @@ body::-webkit-scrollbar {
 	transform-style: preserve-3d;
 	transform: rotateX(180deg) perspective(200px) translateY(-0.5rem);
 	color: var(--text1);
-	mask-image: linear-gradient(to top, white 10%, rgba(0, 0, 0, 0.4) 30% , rgba(0, 0, 0, 0.1) 70%);
+	mask-image: linear-gradient(to top, var(--text1) 10%, rgba(0, 0, 0, 0.4) 30% , rgba(0, 0, 0, 0.1) 70%);
+}
+
+.reflect-button {
+	transform: rotateX(180deg) perspective(50px) translateY(-0.5rem);
+	filter: blur(2px);
+	mask-image: linear-gradient(to top, #ffc9ff8a 0.1%, rgba(0, 0, 0, 0.3) 20% , rgba(0, 0, 0, 0.02) 70%);
 }
 
 .test-border::after {
@@ -134,7 +161,19 @@ body::-webkit-scrollbar {
 	filter: drop-shadow(0 0 2.5px #FFC9FF) 
 			drop-shadow(0 0 5px #ffc9ffad) 
 			drop-shadow(0 0 10px #ffc9ff8a);
-	animation: startOutline .5s ease-in-out forwards;
+	animation: startOutline .6s ease-in-out .5s forwards;
+}
+
+.anime-opacity {
+	animation: opacity .8s ease-in-out .5s forwards;
+}
+
+.started:hover {
+	animation: jumpString .5s ease-in-out;
+}
+
+.started:hover > svg {
+	animation: jumpString .5s ease-in-out;
 }
 
 @keyframes startOutline {
@@ -142,7 +181,28 @@ body::-webkit-scrollbar {
 		width: 0;
 	}	
 	to {
-		width: 100%;
+		width: 101%;
+	}	
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}	
+	to {
+		opacity: 1;;
+	}	
+}
+
+@keyframes jumpString {
+	from {
+		transform: translateY(0);
+	}	
+	50% {
+		transform: translateY(-10%);
+	}
+	to {
+		transform: translateY(0);
 	}	
 }
 

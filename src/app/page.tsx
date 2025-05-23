@@ -1,7 +1,8 @@
 "use client";
 
-import Wrapper from "./__components/features/Wrapper";
+import Wrapper from "../lib/scroll/Wrapper";
 import SectionHome from "./__components/layout/SectionHome";
+import HomeTest from "./__components/layout/HomeTest";
 import SectionWork from "./__components/layout/SectionWork";
 import SectionContact from "./__components/layout/SectionContact";
 import Transitions from "./__components/features/Transitions";
@@ -36,7 +37,8 @@ export default function Home() {
 			<Transitions isOpen={isOpen} onClose={() => setIsOpen(false)} />
 			<Wrapper>
 				<section id="section-1" className="h-[100svh] w-full">
-					<SectionHome />
+					{/* <SectionHome /> */}
+					<HomeTest />
 				</section>
 				<section id="section-2" className="h-[100svh] w-full">
 					<SectionWork />
