@@ -1,9 +1,4 @@
-import { div } from 'motion/react-client';
 import React from 'react';
-
-type SpanProps = {
-    text: string
-}
 
 function TestSpan() {
     return (

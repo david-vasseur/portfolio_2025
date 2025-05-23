@@ -6,7 +6,6 @@ import Logo from "./__components/ux/Logo";
 import NavBar from "./__components/layout/NavBar";
 import { PageProvider } from "@/hooks/pageContext";
 import { AuroraBackground } from "./__components/ux/AuroraBackground";
-import BodyDebugLogger from "./__components/BodyTest";
 const notoSans = localFont({
 	src: [
 		{
