@@ -14,8 +14,8 @@ export default function Page() {
 			<div className="h-[100%] grid grid-rows-[15svh_20svh_1fr]">
 				<div className="text-center text-xl"></div>
 				<div className="text-center font-black text-text-1 flex flex-col justify-around">
-					<h2 className="xl:text-3xl 2xl:text-4xl">I'm learning a bit more every day by building projects</h2>
-					<h3 className="xl:text-3xl 2xl:text-4xl">Here are a few concrete examples of what I've created so far</h3>
+					<h2 className="xl:text-3xl 2xl:text-4xl">I&apos;m learning a bit more every day by building projects</h2>
+					<h3 className="xl:text-3xl 2xl:text-4xl">Here are a few concrete examples of what I&apos;ve created so far</h3>
 					<h3 className="xl:text-5xl 2xl:text-6xl text-text-2">simple, but made with care and curiosity</h3>
 				</div>
 				<div className="text-center text-xl flex flex-col xl:flex-row gap-5 justify-center bg-cards">
@@ -76,7 +76,7 @@ export default function Page() {
 									className="text-white"
 									translateZ={60}
 									>
-									<h2 className="text-2xl text-text-2 font-bold">O'ptits Oignons</h2>
+									<h2 className="text-2xl text-text-2 font-bold">O&apos;ptits Oignons</h2>
 								</CardItem>
 								<div className="flex text-text-1 gap-4 [transform-style:preserve-3d]">
 									<CardItem 
