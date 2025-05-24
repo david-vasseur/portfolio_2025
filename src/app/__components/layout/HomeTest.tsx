@@ -41,7 +41,6 @@ export default function Page() {
         }
     ];
 
-    const [hovered, setHovered] = useState(false);
 
     const { currentIndex } = usePage();
 
