@@ -102,3 +102,94 @@
 		transform: translateY(-200%)
 	}
 } */
+
+.hovered-para {
+	backdrop-filter: blur(1px);
+	transition: all .2s ease-in;
+	cursor: default;
+	opacity: 0;
+	color: var(--text1);
+}
+
+.card-hover:hover .hovered-para {
+	backdrop-filter: blur(20px);
+	opacity: 1;
+}
+
+/*------------------------------------------------------------------------------------- CARD BUTTON -------------------------------*/
+
+.card-button {
+	width: 6rem;
+	height: 2.2rem;
+}
+
+.card-button-contener {
+	width: fit-content;
+	height: .7rem;
+	overflow-y: hidden;
+}
+
+.card-button-span, .card-button-arrow {
+	text-align: right;
+	transition: all .3s ease-in-out;
+	font-size: .4rem;
+	padding: 0;
+	margin: 0;
+}
+
+@media (min-width: 1280px) {
+	.card-button {
+		width: 6rem;
+		height: 2.5rem;
+	}
+
+	.card-button-contener {
+		height: 1rem;
+	}
+
+	.card-button-span, .card-button-arrow {
+		text-align: center;
+		font-size: .7rem;
+	}
+}
+
+@media (min-width: 1920px) {
+	.card-button {
+		width: 8rem;
+		height: 3rem;
+	}
+
+	.card-button-contener {
+		height: 1rem;
+	}
+
+	.card-button-span, .card-button-arrow {
+		font-size: .7rem;
+	}
+
+}
+
+@media (min-width: 2400px) {
+	.card-button {
+		width: 12rem;
+		height: 3.5rem;
+	}
+
+	.card-button-contener {
+		height: 1.8rem;
+	}
+
+	.card-button-span, .card-button-arrow {
+		font-size: 1.2rem;
+	}
+}
+
+.card-button:hover > .card-button-contener > span {
+	transform: translateY(-100%);
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.bg-cards {
+	background: radial-gradient(circle,rgba(61, 14, 62, 1) 0%, rgba(126, 0, 129, 1) 10%, rgba(126, 0, 129, 0) 30%);
+}

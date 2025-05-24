@@ -36,7 +36,7 @@ export default function Page() {
         },
         {
             id: 2,
-            name: "DevOps",
+            name: "Dev-ops",
             content: [SiNginx , FaUbuntu , FaDocker]
         }
     ];
@@ -100,7 +100,8 @@ export default function Page() {
                         <button 
                             className="hidden p-4 rounded-full w-[12rem] h-[3.5rem] font-black xl:flex gap-2 justify-center items-center bg-gray-800/40 border-3 border-text-1 reflect-button"
                         >
-                            {hovered ? "Download CV" : "Get Started"} <MdArrowForwardIos />
+                            <TestSpan />
+                            <MdArrowForwardIos />
                         </button>
                     </div>
                 </div>

@@ -1,23 +1,28 @@
 @import "tailwindcss";
 
+
+
 @media (min-width: 1920px) {
 	.title3xl > h1 {
 		font-size: 8rem;
 	}
+
 }
 
 @media (min-width: 2400px) {
-  .title3xl > h1 {
-    font-size: 11rem;
-  }
-  .title3xl > h2 {
-	font-size: 7rem;
-	margin-bottom: 5rem;
-  }
+	.title3xl > h1 {
+		font-size: 11rem;
+	}
+	.title3xl > h2 {
+		font-size: 7rem;
+		margin-bottom: 5rem;
+	}
 
-  .skill3xl {
-	font-size: 2.5rem;
-  }
+	.skill3xl {
+		font-size: 2.5rem;
+	}
+
+
 }
 
 @layer {
@@ -214,6 +219,29 @@ body::-webkit-scrollbar {
 			drop-shadow(0 0 5px #5F606A);
 }
 
+.bg-logo {
+  background-image: url('/logo.jpeg');
+  background-color: rgba(0, 0, 0, 0.2);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-logo1 {
+  background-image: url('/logo-oignon.webp');
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-logo2 {
+  background-image: url('/logo-photo-share.png');
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: top;
+}
 /*-------------------------------------------------------------------------------------------------------------------------------------- NavBar ------*/
 
 .link-nav {
@@ -329,3 +357,4 @@ body::-webkit-scrollbar {
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------------- ########## ------*/
+
