@@ -40,7 +40,6 @@ export default function Page() {
         }
     ];
 
-
     const { currentIndex } = usePage();
 
     const words = ["FRONT", "BACK", "MERN"];
@@ -89,8 +88,6 @@ export default function Page() {
                     <div className="flex h-full flex-col gap-1 justify-center items-center">
                         <button 
                             className="p-4 rounded-full w-[12rem] h-[3.5rem] font-black flex gap-2 justify-center items-center bg-gray-800/40 border-3 border-text-1 neon-icons started" 
-                            onMouseEnter={() => setHovered(true)}
-                            onMouseLeave={() => setHovered(false)}
                         >
                             <TestSpan />
                             <MdArrowForwardIos />
