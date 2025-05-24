@@ -11,7 +11,6 @@ import { MdAlternateEmail, MdArrowForwardIos } from "react-icons/md";
 import ContactIcons from "../features/ContactIcons";
 import { FlipWords } from "../ux/FlipWord";
 import { usePage } from "@/hooks/pageContext";
-import { useState } from "react";
 import TestSpan from "../ux/TestSpan";
 
 type FetchedIconsProps = {
