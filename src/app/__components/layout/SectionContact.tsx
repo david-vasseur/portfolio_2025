@@ -1,7 +1,7 @@
 "use client"
 import GuestBookForm from "../features/GuestBookForm";
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Globe, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { IconType } from "react-icons";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import ContactIcons from "../features/ContactIcons";

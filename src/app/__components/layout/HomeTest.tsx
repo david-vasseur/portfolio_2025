@@ -11,9 +11,8 @@ import { MdAlternateEmail, MdArrowForwardIos } from "react-icons/md";
 import ContactIcons from "../features/ContactIcons";
 import { FlipWords } from "../ux/FlipWord";
 import TestSpan from "../ux/TestSpan";
-import { BiSolidQuoteAltLeft, BiSolidQuoteLeft, BiSolidQuoteRight } from "react-icons/bi";
+import { BiSolidQuoteLeft, BiSolidQuoteRight } from "react-icons/bi";
 import { usePageIndexStore } from "@/hooks/store/pageIndexStore";
-import { CardBody, CardContainer, CardItem } from "../ux/Card";
 
 type FetchedIconsProps = {
     id: number,

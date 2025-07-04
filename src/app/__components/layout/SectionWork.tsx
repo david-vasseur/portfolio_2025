@@ -2,8 +2,6 @@
 
 import Image from "next/image"
 import { CardBody, CardContainer, CardItem } from "../ux/Card"
-import TestSpan from "../ux/TestSpan"
-import { MdArrowForwardIos } from "react-icons/md"
 import { RiNextjsFill, RiReactjsFill } from "react-icons/ri"
 import { SiElectron, SiExpress, SiMongodb, SiSymfony, SiTailwindcss } from "react-icons/si"
 import CardButton from "../ux/CardButton"
