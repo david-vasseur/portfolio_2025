@@ -10,8 +10,10 @@ import { FiPhone } from "react-icons/fi";
 import { MdAlternateEmail, MdArrowForwardIos } from "react-icons/md";
 import ContactIcons from "../features/ContactIcons";
 import { FlipWords } from "../ux/FlipWord";
-import { usePage } from "@/hooks/pageContext";
 import TestSpan from "../ux/TestSpan";
+import { BiSolidQuoteAltLeft, BiSolidQuoteLeft, BiSolidQuoteRight } from "react-icons/bi";
+import { usePageIndexStore } from "@/hooks/store/pageIndexStore";
+import { CardBody, CardContainer, CardItem } from "../ux/Card";
 
 type FetchedIconsProps = {
     id: number,
@@ -40,7 +42,7 @@ export default function Page() {
         }
     ];
 
-    const { currentIndex } = usePage();
+    const { currentIndex } = usePageIndexStore();
 
     const words = ["FRONT", "BACK", "MERN"];
 
@@ -62,7 +64,7 @@ export default function Page() {
         },
         {
             id: 3,
-            href: "+33659127367",
+            href: "tel:+33659127367",
             content: [FiPhone]
         }
     ];
@@ -86,24 +88,28 @@ export default function Page() {
                             ))}
                     </div>
                     <div className="flex h-full flex-col gap-1 justify-center items-center">
-                        <button 
+                        <a 
+                            href="/cv.pdf"
+                            target="_blank"
                             className="p-4 rounded-full w-[12rem] h-[3.5rem] font-black flex gap-2 justify-center items-center bg-gray-800/40 border-3 border-text-1 neon-icons started" 
                         >
                             <TestSpan />
                             <MdArrowForwardIos />
-                        </button>
-                        <button 
+                        </a>
+                        <a 
                             className="hidden p-4 rounded-full w-[12rem] h-[3.5rem] font-black xl:flex gap-2 justify-center items-center bg-gray-800/40 border-3 border-text-1 reflect-button"
                         >
                             <TestSpan />
                             <MdArrowForwardIos />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
             
-            <div  className="flex justify-around xl:w-[60%] 2xl:w-[40%] mx-auto xl:text-3xl 2xl:text-4xl font-black line-5 text-text-1 items-center">
-                <h3>Full control, full stack, fully MERN<br/>I build where tech meets vision</h3>
+            <div  className="bg-gradient-to-br from-accent-2/30 to-text-2/10 rounded-bl-2xl rounded-tr-2xl rounded-tl-sm rounded-br-sm shadow-gray-800 shadow-2xl p-2 sm:p-4 grid grid-cols-[auto_auto_auto] place-items-center xl:w-[60%] 2xl:w-[35%] mx-auto xl:text-3xl 2xl:text-4xl font-black line-5 text-text-1 items-center">
+                <BiSolidQuoteLeft className="self-start quote-shadow" />
+                <h3 className="text-md sm:text-3xl self-center w-fit text-text-2"><em>Full control, full stack, fully MERN<br/>I build where tech meets vision</em></h3>
+                <BiSolidQuoteRight className="self-end quote-shadow" />
             </div>
 
             <div className="flex justify-around xl:w-[80%] 2xl:w-[60%] mx-auto">

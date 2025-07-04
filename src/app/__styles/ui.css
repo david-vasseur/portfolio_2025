@@ -116,6 +116,14 @@
 	opacity: 1;
 }
 
+.card-hover:hover a {
+	opacity: 1;
+}
+
+.card-hover:hover button {
+	opacity: 1;
+}
+
 /*------------------------------------------------------------------------------------- CARD BUTTON -------------------------------*/
 
 .card-button {
@@ -130,11 +138,15 @@
 }
 
 .card-button-span, .card-button-arrow {
-	text-align: right;
+	text-align: center;
 	transition: all .3s ease-in-out;
-	font-size: .4rem;
+	font-size: .6rem;
 	padding: 0;
 	margin: 0;
+}
+
+.paragraph {
+	font-size: .9rem;
 }
 
 @media (min-width: 1280px) {
@@ -182,14 +194,156 @@
 	.card-button-span, .card-button-arrow {
 		font-size: 1.2rem;
 	}
+
+	.paragraph {
+		font-size: 1.25rem;
+	}
 }
 
 .card-button:hover > .card-button-contener > span {
 	transform: translateY(-100%);
 }
 
+
+
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .bg-cards {
-	background: radial-gradient(circle,rgba(61, 14, 62, 1) 0%, rgba(126, 0, 129, 1) 10%, rgba(126, 0, 129, 0) 30%);
+	background: radial-gradient(circle,rgba(61, 14, 62, 1) 0%, rgba(126, 0, 129, 1) 10%, rgba(126, 0, 129, 0) 60%);
+}
+
+/*-------------------------------------------------------- FORM --------------------------------------------------------------------------------------------------- */
+
+.form-container {
+  width: 90vw;
+  height: 90%;
+  border: 2px solid var(--accent2);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(5px);
+  animation: acc 0.3s ease-in-out;
+}
+
+
+
+.bord {
+  position: absolute;
+  width: 120%;
+  height: 150%;
+  top: 0;
+  right: 0;
+  background-color: var(--accent2);
+  transform: rotate(12deg) skewY(45deg);
+  transform-origin: bottom right;
+  box-shadow: var(--primary) -10px -10px 40px;
+}
+
+.input-container,
+.input-container1 {
+  position: relative;
+}
+
+.input-container::after,
+.input-container1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--text1);
+  transition: all 0.3s ease-out;
+  z-index: 10;
+  filter: drop-shadow(0 0 2.5px #FFC9FF)
+          drop-shadow(0 0 5px #FFC9FF)
+          drop-shadow(0 0 10px #FFC9FF);
+}
+
+.input-container1::after {
+  transform: translateY(-6px);
+}
+
+.input-container:focus-within::after,
+.input-container1:focus-within::after {
+  width: 100%;
+}
+
+.input-class {
+  position: relative;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--accent1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--text1);
+  padding-top: 8rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+}
+
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  color: var(--text1) !important;
+  border-color: var(--accent1) !important;
+  box-shadow: 0 0 0px 1000px var(--border) inset !important;
+  -webkit-text-fill-color: var(--text1) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 1; 
+  transition: opacity 0.3s ease;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0.2;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    width: 80vw;
+    aspect-ratio: 1.76;
+  }
+  .contact-form {
+	width: 50%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .form-container {
+    width: 64vw;
+  }
+  .contact-form {
+	width: 50%;
+  }
+}
+
+/*-------------------------------------------------------------------------------TEXT-HOVER--------------------------*/
+
+.text-hovered:hover h2 {
+	text-shadow: rgb(54, 53, 53) 5px 5px 15px;
+}
+
+.text-hovered:hover svg {
+	filter: drop-shadow(5px 10px 10px rgb(54, 53, 53));
+}
+
+.quote-shadow {
+	filter: drop-shadow(5px 10px 10px rgb(54, 53, 53));
 }

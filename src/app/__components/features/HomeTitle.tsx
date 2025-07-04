@@ -1,12 +1,12 @@
 import React from 'react';
 import { FlipWords } from '../ux/FlipWord';
-import { usePage } from '@/hooks/pageContext';
+import { usePageIndexStore } from '@/hooks/store/pageIndexStore';
 
 function HomeTitle() {
 
     const words = ["FRONT", "BACK", "MERN"];
 
-    const { currentIndex } = usePage();
+    const { currentIndex } = usePageIndexStore();
 
     return (
         <div>

@@ -1,12 +1,13 @@
 "use client";
-import { usePage } from '@/hooks/pageContext';
+
+import { usePageIndexStore } from '@/hooks/store/pageIndexStore';
 import { createTouchHandler, createWheelHandler } from '@/lib/scroll/scrollHandlers';
 import React, { useCallback, useEffect, useMemo, useRef } from 'react'
 
 function Wrapper({ children }: { children :React.ReactNode }) {
 
-    const { currentIndex, setCurrentIndex } = usePage();
-    
+    const { currentIndex, setCurrentIndex } = usePageIndexStore();
+
     const touchStartY = useRef<number | null>(null);
     const touchEndY = useRef<number | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);

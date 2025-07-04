@@ -6,12 +6,12 @@ import SectionWork from "./__components/layout/SectionWork";
 import SectionContact from "./__components/layout/SectionContact";
 import Transitions from "./__components/features/Transitions";
 import { useEffect, useRef, useState } from "react";
-import { usePage } from "@/hooks/pageContext";
+import { usePageIndexStore } from "@/hooks/store/pageIndexStore";
 
 export default function Home() {
 
 	const [isOpen, setIsOpen] = useState(false);
-	const { currentIndex } = usePage();
+	const { currentIndex } = usePageIndexStore();
 	const isFirstRender = useRef(true);
 
 	useEffect(() => {

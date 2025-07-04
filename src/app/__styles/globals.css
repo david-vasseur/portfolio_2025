@@ -220,8 +220,8 @@ body::-webkit-scrollbar {
 }
 
 .bg-logo {
-  background-image: url('/logo.jpeg');
-  background-color: rgba(0, 0, 0, 0.2);
+  background-image: url('/logo_daikoomyo.jpeg');
+  background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   background-size: cover;
   background-position: center;
@@ -237,7 +237,7 @@ body::-webkit-scrollbar {
 
 .bg-logo2 {
   background-image: url('/logo-photo-share.png');
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   background-blend-mode: multiply;
   background-size: cover;
   background-position: top;

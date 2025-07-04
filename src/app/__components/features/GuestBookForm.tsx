@@ -7,11 +7,10 @@ function GuestBookForm() {
     interface IMessage {
         name: string
         email: string
-        rate: string
         message: string
     }
     
-    const defaultMessage: IMessage = { name: '', email: '', rate: '1', message: '' }
+    const defaultMessage: IMessage = { name: '', email: '', message: '' }
 
     const formOpts = formOptions({
     defaultValues: defaultMessage,
@@ -24,47 +23,42 @@ function GuestBookForm() {
         },
     })
 
-    const fetchedStars = [
-        { value: "1", label: "★" },
-        { value: "2", label: "★★" },
-        { value: "3", label: "★★★" },
-        { value: "4", label: "★★★★" },
-        { value: "5", label: "★★★★★" }
-    ]
+
     
 
     return (
         <>
+            <div className='bord hidden md:block'></div>
             <form
-                className="flex flex-col justify-evenly overflow-hidden relative w-[50%] items-center"
+                className="h-[90%] contact-form pb-0 3xl:pb-[4rem] gap-12 flex flex-col justify-end overflow-hidden relative w-[90%] sm:w-[50%] items-center"
                 onSubmit={(e) => {
-                e.preventDefault()
-                e.stopPropagation()
-                form.handleSubmit()
+                    e.preventDefault()
+                    e.stopPropagation()
+                    form.handleSubmit()
                 }}
             >
                 <form.AppField name='name'>
                     {(field) => (
-                        <field.Input placeholder="Your Name" type="text" />
+                        <field.Input cl="input-class" placeholder="Your Name" type="text" />
                     )}
                 </form.AppField>
                 <form.AppField name="email">
                     {(field) => (
-                        <field.Input placeholder="Your Email" type="email" />
+                        <field.Input cl="input-class" placeholder="Your Email" type="email" />
                     )}
                 </form.AppField>
-                <form.AppField name="rate">
+                <form.AppField name="message">
                     {(field) => (
-                        <field.Select options={fetchedStars} />
+                        <field.TextArea placeholder="Your message" />
                     )}
                 </form.AppField>
                 <form.AppForm>
-                    <form.Button label="Submit" />
+                    <form.Button inner1="Submit" inner2="your message" arrow={false} />
                 </form.AppForm>
             </form>
             <div className='hidden form-right w-[40%] h-full bg-transparent relative md:flex flex-col justify-center items-end'>
-                <div className='hidden sm:block text-start p-8 text-[var(--text1)] w-2/3 -translate-y-[30%] translate-x-[-20%] xl:translate-x-[-10%] 2xl:translate-x-[0]'>
-                    <h2 className="subtitle-responsive font-black mb-12 translate-x-[-25%] 2xl:translate-x-[-15%] acc4">LEAVE ME A <strong className='shad text-[var(--text2)] subtitle-responsive'>MESSAGE</strong></h2>
+                <div className='hidden md:block text-start p-8 text-[var(--text1)] w-2/3 xl:translate-x-[-10%] 2xl:translate-x-[0]'>
+                    <h2 className="xl:text-5xl 2xl:text-6xl font-black mb-12 2xl:translate-x-[-15%] acc4">LEAVE ME A <strong className='shad text-[var(--text2)]'>MESSAGE</strong></h2>
                     <p className='font-black'>I will get back to you very soon</p>
                 </div>
             </div> 

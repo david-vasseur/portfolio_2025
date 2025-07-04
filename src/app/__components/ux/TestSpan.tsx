@@ -4,7 +4,7 @@ function TestSpan() {
     return (
         <div className='test-span-contener inline-flex flex-col'>
             <span className="test-span font-black text-text-1 p-0">Get Started</span>
-            <span className="test-span font-black text-text-1 p-0">Download CV</span>
+            <span className="test-span font-black text-text-2 p-0">Download CV</span>
         </div>
         
     )

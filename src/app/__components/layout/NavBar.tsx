@@ -1,5 +1,6 @@
 "use client"
-import { usePage } from '@/hooks/pageContext';
+
+import { usePageIndexStore } from '@/hooks/store/pageIndexStore';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
 
@@ -9,7 +10,9 @@ function NavBar({ className }: { className: string }) {
     const homeRef = useRef<HTMLAnchorElement>(null);
     const workRef = useRef<HTMLAnchorElement>(null);
     const contactRef = useRef<HTMLAnchorElement>(null);
-    const { currentIndex, setCurrentIndex } = usePage();
+    const { currentIndex, setCurrentIndex } = usePageIndexStore();
+    console.log(currentIndex);
+    
 
     useEffect(() => {
         if (homeRef.current && divRef.current && currentIndex === 0) {
