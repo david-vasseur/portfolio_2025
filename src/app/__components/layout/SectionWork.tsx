@@ -10,9 +10,9 @@ import { useEffect, useRef, useState } from "react"
 export default function Page() {
 
 
-	const cardRef1 = useRef(null);
-	const cardRef2 = useRef(null);
-	const cardRef3 = useRef(null);
+	const cardRef1 = useRef<HTMLDivElement>(null);
+	const cardRef2 = useRef<HTMLDivElement>(null);
+	const cardRef3 = useRef<HTMLDivElement>(null);
 
 	const [active, setActive] = useState(1);
 	console.log(active);
