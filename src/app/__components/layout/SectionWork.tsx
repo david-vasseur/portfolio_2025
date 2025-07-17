@@ -50,9 +50,6 @@ export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 		realCards[0],                    
 	];
 
-	console.log(cards);
-	console.log(indexCard);
-
 	useEffect(() => {
 		if (!isReseting) {
 			if (indexCard === 0) {
@@ -303,7 +300,7 @@ export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 							</div>						
 						</div>
 					</div>
-					<div className="px-4 w-[100%] max-w-[100vw] flex justify-between items-center">
+					<div className="px-4 pb-2 w-[100%] max-w-[100vw] flex justify-between items-center">
 						<ChevronLeft className="w-10 h-10" style={{ strokeWidth: 3} } onClick={() => moveLeft()} />
 						<div className="w-[70vw] overflow-hidden p-2">
 							<div className={`flex gap-[2.8vw] ${isAnimating ? "transition-all duration-200" : "" }`} style={{ transform: `translateX(-${indexCard * 34.8}vw)` }}>

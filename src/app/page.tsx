@@ -7,6 +7,7 @@ import SectionContact from "./__components/layout/SectionContact";
 import Transitions from "./__components/features/Transitions";
 import { useEffect, useRef, useState } from "react";
 import { usePageIndexStore } from "@/hooks/store/pageIndexStore";
+import { AuroraBackground } from "./__components/ux/AuroraBackground";
 
 export default function Home() {
 
@@ -50,7 +51,8 @@ export default function Home() {
 
 
 	return (		
-		<main className="w-full">
+		<main className={`${isMobile ? "bg-[linear-gradient(to_top_left,_#6E56CF_0%,_#6E56CF_2%,_#1B1525_90%,_#1B1525_100%)]" : ""} w-full`}>
+			{!isMobile && <AuroraBackground />}
 			<Transitions isOpen={isOpen} onClose={() => setIsOpen(false)} />
 			<Wrapper>
 				<section id="section-1" className="h-[100svh] w-full">
@@ -61,7 +63,7 @@ export default function Home() {
 					<SectionWork isMobile={isMobile} />
 				</section>
 				<section id="section-3" className="h-[100svh] w-full">
-					<SectionContact />
+					<SectionContact isMobile={isMobile} />
 				</section>
 			</Wrapper>	
 		</main>
