@@ -11,6 +11,7 @@ import { usePageIndexStore } from "@/hooks/store/pageIndexStore";
 export default function Home() {
 
 	const [isOpen, setIsOpen] = useState(false);
+	const [isMobile, setIsMobile] = useState<boolean | undefined>();
 	const { currentIndex } = usePageIndexStore();
 	const isFirstRender = useRef(true);
 
@@ -30,6 +31,23 @@ export default function Home() {
 		}
 	}, [currentIndex]);
 
+	useEffect(() => { 
+
+        function reportWindowSize() {
+            const width = window.innerWidth;
+            setIsMobile(width <= 640);     
+        }
+
+        reportWindowSize()
+
+        window.addEventListener("resize", reportWindowSize );
+
+        return () => {
+            window.removeEventListener("resize", reportWindowSize) 
+        }
+
+    }, []);
+
 
 	return (		
 		<main className="w-full">
@@ -40,7 +58,7 @@ export default function Home() {
 					<HomeTest />
 				</section>
 				<section id="section-2" className="h-[100svh] w-full">
-					<SectionWork />
+					<SectionWork isMobile={isMobile} />
 				</section>
 				<section id="section-3" className="h-[100svh] w-full">
 					<SectionContact />

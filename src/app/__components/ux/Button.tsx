@@ -29,10 +29,6 @@ export default function SubscribeButton({ inner1, inner2, arrow = false }: { inn
                             }	
                     </button>
                 }
-                        
-
-
-
         </form.Subscribe>
     )
     }
