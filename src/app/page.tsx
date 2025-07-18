@@ -7,7 +7,7 @@ import SectionContact from "./__components/layout/SectionContact";
 import Transitions from "./__components/features/Transitions";
 import { useEffect, useRef, useState } from "react";
 import { usePageIndexStore } from "@/hooks/store/pageIndexStore";
-import { AuroraBackground } from "./__components/ux/AuroraBackground";
+import { AuroraBackground } from "./__components/ui/AuroraBackground";
 
 export default function Home() {
 
@@ -56,7 +56,6 @@ export default function Home() {
 			<Transitions isOpen={isOpen} onClose={() => setIsOpen(false)} />
 			<Wrapper>
 				<section id="section-1" className="h-[100svh] w-full">
-					{/* <SectionHome /> */}
 					<HomeTest />
 				</section>
 				<section id="section-2" className="h-[100svh] w-full">

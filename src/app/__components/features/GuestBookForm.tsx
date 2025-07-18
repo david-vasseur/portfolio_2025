@@ -1,8 +1,8 @@
-import { useAppForm } from '@/lib/form'
-import { formOptions } from '@tanstack/react-form'
-import React from 'react'
+import { useAppForm } from '@/lib/form';
+import { formOptions } from '@tanstack/react-form';
+import React from 'react';
 
-function GuestBookForm() {
+function GuestBookForm({ isMobile }: { isMobile: boolean | undefined }) {
 
     interface IMessage {
         name: string
@@ -29,8 +29,11 @@ function GuestBookForm() {
     return (
         <>
             <div className='bord hidden md:block'></div>
+            {isMobile && (
+                <h2 className="text-[var(--text2)] font-black text-2xl text-center pt-[2rem]">LEAVE ME A MESSAGE</h2>
+            )}
             <form
-                className="h-[90%] contact-form pb-0 3xl:pb-[4rem] gap-12 flex flex-col justify-end overflow-hidden relative w-[90%] sm:w-[50%] items-center"
+                className={`h-[90%] contact-form ${isMobile ? "pt-0 justify-center gap-10" : "pt-[8rem] justify-end gap-12" } pb-0 3xl:pb-[4rem]  flex flex-col overflow-hidden relative w-[90%] sm:w-[50%] items-center`}
                 onSubmit={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
@@ -53,7 +56,8 @@ function GuestBookForm() {
                     )}
                 </form.AppField>
                 <form.AppForm>
-                    <form.Button inner1="Submit" inner2="your message" arrow={false} />
+                    {/* <form.Button inner1="Submit" inner2="your message" arrow={false} /> */}
+                    <form.Button2 isMobile={isMobile} text1="Submit" text2='Your message' text3='Submit' type='button' size='lg' responsive="lg" />
                 </form.AppForm>
             </form>
             <div className='hidden form-right w-[40%] h-full bg-transparent relative md:flex flex-col justify-center items-end'>

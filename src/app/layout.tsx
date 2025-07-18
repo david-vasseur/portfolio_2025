@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./__styles/globals.css";
 import "./__styles/ui.css";
-import Logo from "./__components/ux/Logo";
+import Logo from "./__components/ui/Logo";
 import NavBar from "./__components/layout/NavBar";
 const notoSans = localFont({
 	src: [
@@ -41,7 +41,6 @@ export default function RootLayout({
 				<NavBar className="fixed left-1/2 top-2 -translate-x-1/2 z-2 scale-[0.8] 2xl:scale-[1]" />
 				{children}
 			</body>
-			
 		</html>
 	);
 }

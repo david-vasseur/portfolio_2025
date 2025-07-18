@@ -280,13 +280,11 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
-  justify-content: flex-end;
+  /* gap: 3.5rem; */
   align-items: center;
   width: 100%;
   height: 100%;
   color: var(--text1);
-  padding-top: 8rem;
 }
 
 .contact-form input:focus,

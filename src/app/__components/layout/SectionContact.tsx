@@ -68,7 +68,7 @@ export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 							
 							{/* Contact Form */}
 							<div className="form-container rounded-3xl shadow-gray-700 shadow-lg p-2 sm:p-8 lg:p-12 ">
-								<GuestBookForm />
+								<GuestBookForm isMobile={isMobile} />
 							</div>
 
 							{/* Contact Information & Map */}
@@ -157,14 +157,13 @@ export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 				<div className="h-[100%] grid grid-rows-[10svh_75svh_1fr]">
 					<div></div>
 					<div className="flex flex-col justify-center items-center">
-						<h2 className="xl:text-5xl 2xl:text-6xl text-text-2 font-bold mb-6 leading-tight">Get In Touch</h2>
 						<div className="form-container rounded-3xl shadow-gray-700 shadow-lg p-2 sm:p-8 lg:p-12 ">
-							<GuestBookForm />
+							<GuestBookForm isMobile={isMobile} />
 						</div>
 					</div>
 					<div className="pb-2">
 						<div className="flex gap-4">
-							<div className="w-[100%] gap-5 sm:gap-10 flex justify-center items-center row-start-3 xl:row-start-2 mb-4 xl:mb-0">
+							<div className="w-[100%] gap-5 flex justify-center items-center row-start-3 mb-4">
 								{fetchedContacts.map(contact => (
 										<ContactIcons key={contact.id} href={contact.href || '#'} icons={contact.content} />
 									))}

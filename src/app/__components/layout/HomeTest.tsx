@@ -9,8 +9,8 @@ import { TbBrandMongodb } from "react-icons/tb";
 import { FiPhone } from "react-icons/fi";
 import { MdAlternateEmail, MdArrowForwardIos } from "react-icons/md";
 import ContactIcons from "../features/ContactIcons";
-import { FlipWords } from "../ux/FlipWord";
-import TestSpan from "../ux/TestSpan";
+import { FlipWords } from "../ui/FlipWord";
+import TestSpan from "../ui/TestSpan";
 import { BiSolidQuoteLeft, BiSolidQuoteRight } from "react-icons/bi";
 import { usePageIndexStore } from "@/hooks/store/pageIndexStore";
 

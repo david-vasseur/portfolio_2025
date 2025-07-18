@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlipWords } from '../ux/FlipWord';
+import { FlipWords } from '../ui/FlipWord';
 import { usePageIndexStore } from '@/hooks/store/pageIndexStore';
 
 function HomeTitle() {

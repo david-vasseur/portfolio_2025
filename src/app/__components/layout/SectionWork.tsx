@@ -1,10 +1,11 @@
 "use client"
 
 import Image from "next/image";
-import { CardBody, CardContainer, CardItem } from "../ux/Card";
+import { CardBody, CardContainer, CardItem } from "../ui/Card";
 import { RiNextjsFill, RiReactjsFill } from "react-icons/ri";
 import { SiElectron, SiExpress, SiMongodb, SiSymfony, SiTailwindcss } from "react-icons/si";
-import CardButton from "../ux/CardButton";
+import CardButton from "../ui/CardButton";
+import NewButton from "../ui/NewButton";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -294,9 +295,9 @@ export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 									}
 								</p>
 							</div>
-							<div className="w-[90%] flex justify-between items-center">
-								<CardButton arrow={false} inner1={indexCard === 1 ? realCards[2].inner1 : indexCard === 2 ? realCards[0].inner1 : realCards[1].inner1} inner2="Code Review" href={indexCard === 1 ? realCards[2].button1 : indexCard === 2 ? realCards[0].button1 : realCards[1].button1} />
-								<CardButton arrow={true} inner1={indexCard === 1 ? realCards[2].inner2 : indexCard === 2 ? realCards[0].inner2 : realCards[1].inner2} inner2="Application" href={indexCard === 1 ? realCards[2].button2 : indexCard === 2 ? realCards[0].button2 : realCards[1].button2} />
+							<div className="w-[100%] flex justify-between items-center">
+								<NewButton size="xs" responsive="sm" type="external" isMobile={isMobile} text3={indexCard === 1 ? realCards[2].inner1 : indexCard === 2 ? realCards[0].inner1 : realCards[1].inner1} text1="" text2="" to={indexCard === 1 ? realCards[2].button1 : indexCard === 2 ? realCards[0].button1 : realCards[1].button1} />
+								<NewButton size="xs" responsive="sm" type="external" isMobile={isMobile} arrow text3={indexCard === 1 ? realCards[2].inner2 : indexCard === 2 ? realCards[0].inner2 : realCards[1].inner2} text1="" text2="" to={indexCard === 1 ? realCards[2].button2 : indexCard === 2 ? realCards[0].button2 : realCards[1].button2} />
 							</div>						
 						</div>
 					</div>

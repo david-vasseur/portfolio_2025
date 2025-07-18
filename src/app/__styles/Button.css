@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+
+.button-wrapper {
+    display: inline-block; 
+    padding: 1rem; 
+    animation: none;
+}
+
+.button-wrapper:hover {
+    animation: bong-hover 0.6s ease;
+}
+
+.button-wrapper:hover .button-chevron {
+    animation: bong-chevron .8s ease;
+}
+
+.button-wrapper:hover > .button-container {
+    border: 2px rgba(255, 255, 255, 0.75) solid;
+}
+
+.button-container {
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+	backdrop-filter: blur(4px);
+}
+
+.button-container-text {
+	overflow: hidden;
+}
+
+.button-container-text-1,
+.button-container-text-2 {
+	text-align: center;
+}
+
+
+@keyframes bong-hover {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-8px); }
+	100% { transform: translateY(0); }
+}
+
+@keyframes bong-chevron {
+	0% { transform: translateX(0); }
+	30% { transform: translateX(10px); }
+	60% { transform: translateX(0); }
+	100% { transform: translateX(0); }
+}
