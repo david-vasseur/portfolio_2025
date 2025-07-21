@@ -1,10 +1,8 @@
-import { useStore } from '@tanstack/react-form';
 import { useFieldContext } from '../../../hooks/formContext';
+import { FieldErrors } from '../features/form/field-errors';
 
 export default function Input({ placeholder }: { placeholder: string }) {
-  const field = useFieldContext<string>()
-
-  const errors = useStore(field.store, (state) => state.meta.errors)
+  const field = useFieldContext<string>();
 
     return (
         <div className="w-[90%] input-container1">
@@ -14,11 +12,7 @@ export default function Input({ placeholder }: { placeholder: string }) {
                 value={field.state.value}
                 onChange={(e) => field.handleChange(e.target.value)}
             />
-            {errors.map((error: string) => (
-                <div key={error} style={{ color: 'red' }}>
-                    {error}
-                </div>
-            ))}
+            <FieldErrors meta={field.state.meta} />
         </div>
     )
 }

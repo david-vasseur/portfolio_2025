@@ -1,16 +1,16 @@
 import { useAppForm } from '@/lib/form';
 import { formOptions } from '@tanstack/react-form';
-import React from 'react';
+import React, { useState } from 'react';
+import { serviceSchema, TServiceSchema } from '../../../../lib/schema';
+import { sendEmail } from './ContactForm.action';
+import Modal from '../Modal';
 
-function GuestBookForm({ isMobile }: { isMobile: boolean | undefined }) {
+function ContactForm({ isMobile }: { isMobile: boolean | undefined }) {
 
-    interface IMessage {
-        name: string
-        email: string
-        message: string
-    }
+    const [isModalOpen, setIsModalOpen] = useState(false);
+	const [modalContent, setModalContent] = useState<React.ReactNode>(null);
     
-    const defaultMessage: IMessage = { name: '', email: '', message: '' }
+    const defaultMessage: TServiceSchema = { name: '', email: '', message: '' }
 
     const formOpts = formOptions({
     defaultValues: defaultMessage,
@@ -18,8 +18,21 @@ function GuestBookForm({ isMobile }: { isMobile: boolean | undefined }) {
 
     const form = useAppForm({
         ...formOpts,
-        onSubmit: async ({ value }: { value: IMessage }) => {
-        console.log(value)
+        validators: {
+            onChange: serviceSchema,
+        },
+        onSubmit: async ({ value }: { value: TServiceSchema }) => {
+
+            const response = await sendEmail(value);
+
+            if (!response) {
+                setModalContent("An error occured");
+            } else {
+                setModalContent("Message sent");
+                form.reset();
+            }
+
+            setIsModalOpen(true)
         },
     })
 
@@ -28,10 +41,6 @@ function GuestBookForm({ isMobile }: { isMobile: boolean | undefined }) {
 
     return (
         <>
-            <div className='bord hidden md:block'></div>
-            {isMobile && (
-                <h2 className="text-[var(--text2)] font-black text-2xl text-center pt-[2rem]">LEAVE ME A MESSAGE</h2>
-            )}
             <form
                 className={`h-[90%] contact-form ${isMobile ? "pt-0 justify-center gap-10" : "pt-[8rem] justify-end gap-12" } pb-0 3xl:pb-[4rem]  flex flex-col overflow-hidden relative w-[90%] sm:w-[50%] items-center`}
                 onSubmit={(e) => {
@@ -56,18 +65,14 @@ function GuestBookForm({ isMobile }: { isMobile: boolean | undefined }) {
                     )}
                 </form.AppField>
                 <form.AppForm>
-                    {/* <form.Button inner1="Submit" inner2="your message" arrow={false} /> */}
-                    <form.Button2 isMobile={isMobile} text1="Submit" text2='Your message' text3='Submit' type='button' size='lg' responsive="lg" />
+                    <form.Button2 isMobile={isMobile} text1="Submit" text2='Your message' text3='Submit' type='button' size='base' responsive="xs" />
                 </form.AppForm>
             </form>
-            <div className='hidden form-right w-[40%] h-full bg-transparent relative md:flex flex-col justify-center items-end'>
-                <div className='hidden md:block text-start p-8 text-[var(--text1)] w-2/3 xl:translate-x-[-10%] 2xl:translate-x-[0]'>
-                    <h2 className="xl:text-5xl 2xl:text-6xl font-black mb-12 2xl:translate-x-[-15%] acc4">LEAVE ME A <strong className='shad text-[var(--text2)]'>MESSAGE</strong></h2>
-                    <p className='font-black'>I will get back to you very soon</p>
-                </div>
-            </div> 
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+				<p className="text-center cursor-pointer" onClick={() => setIsModalOpen(false)}>{modalContent}</p>
+			</Modal>
         </>
     )
 }
 
-export default GuestBookForm;
+export default ContactForm;

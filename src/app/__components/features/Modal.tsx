@@ -13,17 +13,17 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
 
 	return (
 		<ModalPortal>
-		<div
-			className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-2"
-			onClick={onClose}
-		>
 			<div
-				className="bg-accent-1 rounded-xl p-6 max-w-lg w-full"
-				onClick={(e) => e.stopPropagation()}
+				className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-2"
+				onClick={onClose}
 			>
-			{children}
+				<div
+					className="bg-accent-1 rounded-xl p-6 max-w-lg w-full"
+					onClick={(e) => e.stopPropagation()}
+				>
+				{children}
+				</div>
 			</div>
-		</div>
 		</ModalPortal>
 	);
 }

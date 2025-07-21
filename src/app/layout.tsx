@@ -35,7 +35,6 @@ export default function RootLayout({
 				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 				<meta name="google" content="notranslate" />
 			</head>
-			
 			<body className={`${notoSans.className} relative`}>
 				<Logo className="hidden sm:fixed left-2 top-2 z-2" />
 				<NavBar className="fixed left-1/2 top-2 -translate-x-1/2 z-2 scale-[0.8] 2xl:scale-[1]" />

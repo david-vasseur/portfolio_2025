@@ -1,7 +1,7 @@
 "use client";
 
 import Wrapper from "../lib/scroll/Wrapper";
-import HomeTest from "./__components/layout/HomeTest";
+import HomeTest from "./__components/layout/SectionHome";
 import SectionWork from "./__components/layout/SectionWork";
 import SectionContact from "./__components/layout/SectionContact";
 import Transitions from "./__components/features/Transitions";

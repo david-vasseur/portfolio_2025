@@ -1,0 +1,12 @@
+.textFromLeft {
+    animation: text-from-left .5s ease-in-out;
+}
+
+@keyframes text-from-left {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
