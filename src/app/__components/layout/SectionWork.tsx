@@ -4,7 +4,6 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../ui/Card";
 import { RiNextjsFill, RiReactjsFill } from "react-icons/ri";
 import { SiElectron, SiExpress, SiMongodb, SiSymfony, SiTailwindcss } from "react-icons/si";
-import CardButton from "../ui/CardButton";
 import NewButton from "../ui/NewButton";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
