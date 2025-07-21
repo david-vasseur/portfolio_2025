@@ -153,11 +153,11 @@ export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 								<div className="w-[90%] flex justify-around 2xl:justify-evenly items-center">
 									<CardItem 
 									translateZ={120}>
-									<CardButton arrow={false} inner1="Github" inner2="Code Review" href="https://github.com/david-vasseur/electron-back/tree/master" />
+									<NewButton text1="Github" text2="Code Review" text3="" isMobile={isMobile} type="external" size="base" to="https://github.com/david-vasseur/electron-back/tree/master" />
 								</CardItem>
 								<CardItem 
 									translateZ={120}>
-									<CardButton arrow={true} inner1="Download" inner2="Application" href="https://github.com/david-vasseur/electron-back/releases/tag/v0.1.3" />
+									<NewButton arrow text1="Download" text2="Application" text3="" isMobile={isMobile} type="external" size="base" to="https://github.com/david-vasseur/electron-back/releases/tag/v0.1.3" />
 								</CardItem>
 								</div>						
 							</CardBody>
