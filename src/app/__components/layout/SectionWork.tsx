@@ -203,11 +203,11 @@ export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 								<div className="w-[90%] flex justify-around 2xl:justify-evenly items-center">
 									<CardItem 
 									translateZ={120}>
-									<CardButton arrow={false} inner1="GitHub" inner2="Code Review" href="https://github.com/O-clock-Nem/projet-8-o-petits-oignons-front" />
+									<NewButton text1="GitHub" text2="Code Review" text3="" type="external" size="base" isMobile={isMobile} to="https://github.com/O-clock-Nem/projet-8-o-petits-oignons-front" />
 								</CardItem>
 								<CardItem 
 									translateZ={120}>
-									<CardButton arrow={true} inner1="Visit" inner2="WebSite" href="https://www.opetitsoignons.io/"/>
+									<NewButton arrow={true} text1="Visit" text2="WebSite" text3="" type="external" size="base" isMobile={isMobile} to="https://www.opetitsoignons.io/"/>
 								</CardItem>
 								</div>						
 							</CardBody>
@@ -255,11 +255,11 @@ export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 									<CardItem 
 									translateZ={120}
 									>
-									<CardButton arrow={false} inner1="GitHub" inner2="Code Review" href="https://github.com/david-vasseur/daikoomyo_v2" />
+									<NewButton text1="GitHub" text2="Code Review" text3="" isMobile={isMobile} size="base" type="external" to="https://github.com/david-vasseur/daikoomyo_v2" />
 								</CardItem>
 								<CardItem 
 									translateZ={120}>
-									<CardButton arrow={true} inner1="Visit" inner2="WebSite" href="https://www.daikoomyo.fr"/>
+									<NewButton arrow text1="Visit" text2="WebSite" text3="" isMobile={isMobile} size="base" type="external" to="https://www.daikoomyo.fr"/>
 								</CardItem>
 								</div>
 							</CardBody>

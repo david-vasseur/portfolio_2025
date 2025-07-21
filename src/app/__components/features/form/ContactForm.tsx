@@ -48,7 +48,7 @@ function ContactForm({ isMobile }: { isMobile: boolean | undefined }) {
     return (
         <>
             <form
-                className={`h-[90%] contact-form ${isMobile ? "pt-0 justify-center gap-10" : "pt-[8rem] justify-end gap-12" } pb-0 3xl:pb-[4rem]  flex flex-col overflow-hidden relative w-[90%] sm:w-[50%] items-center`}
+                className={`h-[90%] contact-form ${isMobile ? "pt-0 justify-center gap-8" : "pt-[8rem] justify-end gap-12" } pb-0 3xl:pb-[4rem]  flex flex-col overflow-hidden relative w-[90%] sm:w-[50%] items-center`}
                 onSubmit={(e) => {
                     e.preventDefault()
                     e.stopPropagation()

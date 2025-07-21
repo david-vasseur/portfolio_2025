@@ -36,7 +36,7 @@ export default function Home() {
 
         function reportWindowSize() {
             const width = window.innerWidth;
-            setIsMobile(width <= 640);     
+            setIsMobile(width <= 1279);     
         }
 
         reportWindowSize()
