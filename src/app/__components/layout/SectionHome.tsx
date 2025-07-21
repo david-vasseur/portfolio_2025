@@ -21,7 +21,7 @@ type FetchedIconsProps = {
     content: IconType[]
 }
 
-export default function Page() {
+export default function Page({ isMobile }: { isMobile: boolean | undefined }) {
 
     const fetchedSkills: FetchedIconsProps[] = [
         {
@@ -105,11 +105,13 @@ export default function Page() {
                 </div>
             </div>
             
-            <div  className="bg-gradient-to-br from-accent-2/30 to-text-2/10 rounded-bl-2xl rounded-tr-2xl rounded-tl-sm rounded-br-sm shadow-gray-800 shadow-2xl p-2 sm:p-4 grid grid-cols-[auto_auto_auto] place-items-center xl:w-[60%] 2xl:w-[35%] mx-auto xl:text-3xl 2xl:text-4xl font-black line-5 text-text-1 items-center">
-                <BiSolidQuoteLeft className="self-start quote-shadow" />
-                <h3 className="text-md sm:text-3xl self-center w-fit text-text-2"><em>Full control, full stack, fully MERN<br/>I build where tech meets vision</em></h3>
-                <BiSolidQuoteRight className="self-end quote-shadow" />
-            </div>
+            {!isMobile && (
+                <div  className="bg-gradient-to-br from-accent-2/30 to-text-2/10 rounded-bl-2xl rounded-tr-2xl rounded-tl-sm rounded-br-sm shadow-gray-800 shadow-2xl p-2 sm:p-4 grid grid-cols-[auto_auto_auto] place-items-center xl:w-[60%] 2xl:w-[35%] mx-auto xl:text-3xl 2xl:text-4xl font-black line-5 text-text-1 items-center">
+                    <BiSolidQuoteLeft className="self-start quote-shadow" />
+                    <h3 className="text-md sm:text-3xl self-center w-fit text-text-2"><em>Full control, full stack, fully MERN<br/>I build where tech meets vision</em></h3>
+                    <BiSolidQuoteRight className="self-end quote-shadow" />
+                </div>
+            )}
 
             <div className="flex justify-around xl:w-[80%] 2xl:w-[60%] mx-auto">
                 {fetchedSkills.map(skill => (

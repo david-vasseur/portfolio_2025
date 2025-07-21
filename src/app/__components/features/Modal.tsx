@@ -1,5 +1,6 @@
 "use client";
 
+import { X } from "lucide-react";
 import ModalPortal from "./ModalPortal";
 
 interface ModalProps {
@@ -18,10 +19,11 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
 				onClick={onClose}
 			>
 				<div
-					className="bg-accent-1 rounded-xl p-6 max-w-lg w-full"
+					className="relative bg-accent-2 cursor-pointer text-base xl:text-xl text-text-1 font-black rounded-3xl py-20 px-10 border-2 border-text-1 max-w-lg w-2/3"
 					onClick={(e) => e.stopPropagation()}
 				>
-				{children}
+					<X className="absolute right-2 top-2 stroke-3 text-text-1 hover:scale-110 hover:text-red-400 transition-all duration-400" onClick={onClose} />
+					{children}
 				</div>
 			</div>
 		</ModalPortal>

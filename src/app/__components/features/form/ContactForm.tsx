@@ -28,7 +28,13 @@ function ContactForm({ isMobile }: { isMobile: boolean | undefined }) {
             if (!response) {
                 setModalContent("An error occured");
             } else {
-                setModalContent("Message sent");
+                setModalContent(<>
+                    Your message has been sent.<br />
+                    <br />
+                    I'll get back to you shortly.<br />
+                    <br />
+                    Thank you!
+                </>);
                 form.reset();
             }
 
